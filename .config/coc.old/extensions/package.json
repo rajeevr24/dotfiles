@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "coc-clangd": ">=0.4.14",
+    "coc-json": ">=1.2.6",
+    "coc-python": ">=1.2.12",
+    "coc-snippets": ">=2.1.28",
+    "coc-vimlsp": ">=0.10.1"
+  }
+}
