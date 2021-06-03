@@ -5,19 +5,18 @@ vim.cmd('source ~/.config/nvim/vimscript/ranger.vim')
 -- Plugins
 require('plugins')
 
--- LSP
---require('lsp')
+-- For Code-Actions and LSP
 
--- For Code-Actions
 --require('lsp-saga')
+-- require('lsp')
 require('n-trouble')
---require'lsp_signature'.on_attach()
 require('n-navigator')
+
 -- Treesitter
 require('treesitter')
 
--- For Tabs
-require('buffer-line')
+-- File Explorer
+require('tree')
 
 -- For Commentary
 require('commentary')
@@ -37,19 +36,28 @@ require('completion')
 vim.o.completeopt = "menuone,noselect"
 
 --Colorscheme
-	--vim.g.material_style = "palenight"
-	--require('material').set()
-	vim.cmd[[colorscheme tokyonight]]
-	vim.g.tokyonight_style = "night"
---	vim.g.tokyonight_italic_functions = true
+	vim.g.material_style = "darker"
+	require('material').set()
+    -- require('solarized').set()
+    --  vim.cmd[[set termguicolors]]
+    --	vim.g.tokyonight_style = "night"
+    --	vim.g.tokyonight_italic_functions = true
 -- KeyMappings
 require('mappings')
 
 -- Basic Tweaks
 require('settings')
 require('auto-pair')
-require('galaxy-line')
+
+-- require('galaxy-line')
+require('status-bar')
 require'colorizer'.setup()
+require('icon')
+
+-- For Tabs
+-- require('barbar')
+require('tabs')
+
 -- Vim Commands
 vim.cmd([[
 " Better window navigation
@@ -59,7 +67,7 @@ vim.cmd([[
 	nnoremap <C-l> <C-w>l
 
 " Leader Key
-	let mapleader=","
+	let mapleader=" "
 
 " TAB in general mode will move to text buffer
 	nnoremap <silent> <TAB> :bnext<CR>
@@ -86,6 +94,8 @@ vim.cmd([[
 	nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 	nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 	nnoremap <leader>fe <cmd>lua require('telescope.builtin').file_explorer()<cr>
+    nnoremap <leader>cf <cmd>lua require('tele-scope').grep_config()<cr>
+    nnoremap <leader>sf <cmd>lua require('tele-scope').search_file()<cr>
 
 " Trouble(lua settings not working)
 

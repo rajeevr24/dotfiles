@@ -51,7 +51,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 -- end
 -- For Auto-Completion
 vim.cmd([[
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-z>     compe#close('<C-e>')
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 

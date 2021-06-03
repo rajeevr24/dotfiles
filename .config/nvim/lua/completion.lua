@@ -23,6 +23,13 @@ require'compe'.setup {
   };
 }
 
+-- For Auto-Completion
+vim.cmd([[
+inoremap <silent><expr> <C-z>     compe#close('<C-e>')
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+]])
+
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end

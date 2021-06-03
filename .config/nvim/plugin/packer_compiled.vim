@@ -84,10 +84,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
@@ -109,6 +105,10 @@ _G.packer_plugins = {
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["material.nvim"] = {
     loaded = true,
@@ -166,6 +166,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
+  rnvimr = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/rnvimr"
+  },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope.nvim"
@@ -180,9 +188,8 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ["vim-vsnip"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-vsnip"
   }
 }
 
