@@ -39,5 +39,5 @@
     "Paste last thing yanked not deleted
         nmap ,p "0p
         nmap ,P "oP
-set termguicolors
+    set termguicolors
 ]])

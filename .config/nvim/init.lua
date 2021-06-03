@@ -36,10 +36,11 @@ require('completion')
 vim.o.completeopt = "menuone,noselect"
 
 --Colorscheme
-	vim.g.material_style = "darker"
-	require('material').set()
+    local base16 = require 'base16'
+    base16(base16.themes.brewer, true)
+	-- vim.g.material_style = "darker"
+	-- require('material').set()
     -- require('solarized').set()
-    --  vim.cmd[[set termguicolors]]
     --	vim.g.tokyonight_style = "night"
     --	vim.g.tokyonight_italic_functions = true
 -- KeyMappings
@@ -87,21 +88,4 @@ vim.cmd([[
 "Use control-c instead of escape
 	nnoremap <silent> <C-c> <Esc>
 
-" Telescope
-
-	nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-	nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-	nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-	nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-	nnoremap <leader>fe <cmd>lua require('telescope.builtin').file_explorer()<cr>
-    nnoremap <leader>cf <cmd>lua require('tele-scope').grep_config()<cr>
-    nnoremap <leader>sf <cmd>lua require('tele-scope').search_file()<cr>
-
-" Trouble(lua settings not working)
-
- nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
- nnoremap <leader>xd <cmd>TroubleToggle lsp_document_diagnostics<cr>
- nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
- nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
- nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 ]])

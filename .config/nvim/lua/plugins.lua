@@ -20,9 +20,10 @@ return require('packer').startup(function(use)
         requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
     -- Colorscheme
-    use 'marko-cerovac/material.nvim'
+    -- use 'marko-cerovac/material.nvim'
     use {'folke/tokyonight.nvim'}
     use {'dracula/vim', as = 'dracula'}
+    use {'norcalli/nvim-base16.lua'}
     -- For Welcome Screen
     use 'glepnir/dashboard-nvim'
 
@@ -74,6 +75,7 @@ return require('packer').startup(function(use)
             require('gitsigns').setup()
         end
     }
-
+    -- Tweaking Vim
+    use 'tweekmonster/startuptime.vim'
     -- You can alias plugin names
 end)

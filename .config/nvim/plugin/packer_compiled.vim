@@ -110,10 +110,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/material.nvim"
-  },
   ["navigator.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/navigator.lua"
@@ -121,6 +117,10 @@ _G.packer_plugins = {
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-base16.lua"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
@@ -169,6 +169,10 @@ _G.packer_plugins = {
   rnvimr = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/rnvimr"
+  },
+  ["startuptime.vim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/startuptime.vim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
