@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["bracey.vim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/bracey.vim"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
@@ -113,6 +117,10 @@ _G.packer_plugins = {
   ["navigator.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/navigator.lua"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

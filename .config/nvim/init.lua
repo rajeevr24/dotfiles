@@ -37,19 +37,22 @@ vim.o.completeopt = "menuone,noselect"
 
 --Colorscheme
     local base16 = require 'base16'
-    base16(base16.themes.brewer, true)
+    -- base16(base16.themes.snazzy, true)
+    -- base16(base16.themes.brewer, true)
+    base16(base16.themes["onedark"], true)
 	-- vim.g.material_style = "darker"
 	-- require('material').set()
     -- require('solarized').set()
-    --	vim.g.tokyonight_style = "night"
-    --	vim.g.tokyonight_italic_functions = true
+
 -- KeyMappings
 require('mappings')
 
 -- Basic Tweaks
 require('settings')
 require('auto-pair')
-
+require('custom_highlights')
+-- Smooth Scroll
+require('neoscroll').setup()
 -- require('galaxy-line')
 require('status-bar')
 require'colorizer'.setup()

@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
     use {'ray-x/navigator.lua',
         requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
+    -- For Live Server
+    use {'turbio/bracey.vim', run = 'npm install --prefix server'}
+
     -- Colorscheme
     -- use 'marko-cerovac/material.nvim'
     use {'folke/tokyonight.nvim'}
@@ -40,7 +43,7 @@ return require('packer').startup(function(use)
 
     -- For Comments
     use 'b3nj5m1n/kommentary'
--- For Tabs
+    -- For Tabs
     use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
     -- use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     -- Fuzzy Finder
@@ -77,5 +80,7 @@ return require('packer').startup(function(use)
     }
     -- Tweaking Vim
     use 'tweekmonster/startuptime.vim'
+    -- Smooth Scroll
+    use 'karb94/neoscroll.nvim'
     -- You can alias plugin names
 end)
