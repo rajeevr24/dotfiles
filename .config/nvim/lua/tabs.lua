@@ -5,8 +5,8 @@
 
 -- define some colors
 
-local bar_fg = "#565c64"
-local activeBuffer_fg = "#c8ccd4"
+local bar_fg = "#c8ccd4"
+local activeBuffer_fg = "#66ffff"
 
 require "bufferline".setup {
     options = {

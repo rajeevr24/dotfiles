@@ -29,10 +29,9 @@ vim.g.dashboard_custom_section = {
     c = {description = {'  File Browser       '}, command = 'Telescope file_browser'},
     d = {description = {'  Find Word          '}, command = 'Telescope live_grep'},
     e = {description = {'  Settings           '}, command = ':e ~/.config/nvim/init.lua'}
-    -- e = {description = {'  Marks              '}, command = 'Telescope marks'}
 }
--- TO-DO: Add Footer
 
+vim.g.dashboard_custom_footer = {'ENJOY EDITING 😉'}
 
 vim.cmd([[
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2

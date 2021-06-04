@@ -79,10 +79,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
-  dracula = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dracula"
-  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
@@ -161,6 +157,10 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["one-nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/one-nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

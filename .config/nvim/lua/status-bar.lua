@@ -139,7 +139,7 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = {fg = '#ffffff', gui = 'bold'}
+  color = {fg = '#008080', gui = 'bold'}
 }
 
 -- Add components to right sections
@@ -147,13 +147,13 @@ ins_right {
   'o:encoding', -- option component same as &encoding in viml
   upper = true, -- I'm not sure why it's upper case either ;)
   condition = conditions.hide_in_width,
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
   color = {fg = colors.green, gui = 'bold'}
 }
 
 ins_right {
-  'fileformat',
-  upper = true,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  'filetype',
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
   color = {fg = colors.green, gui = 'bold'}
 }
 
@@ -175,14 +175,38 @@ ins_right {
 }
 
 ins_right {
-  function() return '▊' end,
-  color = {fg = colors.blue},
+  function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = colors.red,
+      i = colors.green,
+      v = colors.blue,
+      [''] = colors.blue,
+      V = colors.blue,
+      c = colors.magenta,
+      no = colors.red,
+      s = colors.orange,
+      S = colors.orange,
+      [''] = colors.orange,
+      ic = colors.yellow,
+      R = colors.violet,
+      Rv = colors.violet,
+      cv = colors.red,
+      ce = colors.red,
+      r = colors.cyan,
+      rm = colors.cyan,
+      ['r?'] = colors.cyan,
+      ['!'] = colors.red,
+      t = colors.red
+    }
+    vim.api.nvim_command(
+        'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
+            colors.bg)
+    return '▊ '
+  end,
+  color = "LualineMode",
   right_padding = 0
 }
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
-
-
--- For Feline
--- require('feline').setup()

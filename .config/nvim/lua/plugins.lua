@@ -24,9 +24,10 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     -- use 'marko-cerovac/material.nvim'
-    use {'folke/tokyonight.nvim'}
-    use {'dracula/vim', as = 'dracula'}
+    -- use {'folke/tokyonight.nvim'}
+    -- use {'dracula/vim', as = 'dracula'}
     use {'norcalli/nvim-base16.lua'}
+    -- use {'Th3Whit3Wolf/one-nvim'}
     -- For Welcome Screen
     use 'glepnir/dashboard-nvim'
 

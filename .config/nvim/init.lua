@@ -37,9 +37,14 @@ vim.o.completeopt = "menuone,noselect"
 
 --Colorscheme
     local base16 = require 'base16'
-    -- base16(base16.themes.snazzy, true)
+    base16(base16.themes.snazzy, true)
     -- base16(base16.themes.brewer, true)
-    base16(base16.themes["onedark"], true)
+    -- base16(base16.themes.twilight, true)
+    -- base16(base16.themes.porple, true)
+    -- base16(base16.themes.woodland, true)
+    -- base16(base16.themes.circus, true)
+    -- base16(base16.themes.atlas, true)
+    -- base16(base16.themes["onedark"], true)
 	-- vim.g.material_style = "darker"
 	-- require('material').set()
     -- require('solarized').set()

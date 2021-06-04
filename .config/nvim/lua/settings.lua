@@ -9,6 +9,10 @@
     vim.opt.mouse = 'a'
 -- Show current line number
     vim.opt.number = true
+-- Show command Height
+    vim.opt.cmdheight = 1
+-- Set signcolumn
+    vim.opt.signcolumn = 'yes'
 -- Show relative line number
     vim.opt.relativenumber = true
 -- Enable highlighting of current line
