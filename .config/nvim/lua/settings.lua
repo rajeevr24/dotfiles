@@ -1,5 +1,7 @@
 -- Enable Syntax
     vim.opt.syntax = 'enable'
+-- Enable term GUI colors
+    vim.opt.termguicolors = true
 -- Required to keep multiple buffers open multiple buffers
     vim.opt.hidden = true
 -- Fixing line
@@ -47,5 +49,4 @@
     "Paste last thing yanked not deleted
         nmap ,p "0p
         nmap ,P "oP
-    set termguicolors
 ]])

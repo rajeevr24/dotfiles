@@ -61,7 +61,8 @@ return require('packer').startup(function(use)
     use 'p00f/nvim-ts-rainbow'
     use {'norcalli/nvim-colorizer.lua'}
     -- Bracket Closer
-    use 'windwp/nvim-autopairs'
+    -- use 'windwp/nvim-autopairs'
+    use {'steelsojka/pears.nvim'}
     -- Use specific branch, dependency and run lua file after load
     -- For Beautiful statusline
     -- use {'glepnir/galaxyline.nvim', branch = 'main', requires = {'kyazdani42/nvim-web-devicons'}}
@@ -83,5 +84,14 @@ return require('packer').startup(function(use)
     use 'tweekmonster/startuptime.vim'
     -- Smooth Scroll
     use 'karb94/neoscroll.nvim'
+    -- For Zen Mode
+    use {"folke/zen-mode.nvim",
+  config = function()
+    require("zen-mode").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end}
     -- You can alias plugin names
 end)
