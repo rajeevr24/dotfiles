@@ -53,6 +53,7 @@ vim.o.completeopt = "menuone,noselect"
 require('mappings')
 
 -- Basic Tweaks
+
 require('settings')
 require('auto-pair')
 require('custom_highlights')

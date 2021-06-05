@@ -1,18 +1,24 @@
 local cmd = vim.cmd
 
 --misc--
-cmd "hi LineNr guifg=#32c25f"
+cmd "hi LineNr term=bold cterm=bold guifg=#00ff00 guibg=NONE cterm=NONE gui=NONE"
 -- cmd "hi Comment guifg=#4d4d00"
 cmd "hi Comment guifg=#4d4d33"
 cmd "hi VertSplit guifg=#22fcc8"
 cmd "hi EndOfBuffer guifg=#1e222a"
+-- Pmenu
+cmd "hi PmenuSel guibg=#8c8c8c"
+cmd "hi Pmenu  guibg=#282c34"
+cmd "hi PmenuSbar guibg =#00cccc"
+cmd "hi PmenuThumb guibg =#81A1C1"
 
 -- line n.o
 --cmd "hi clear CursorLine"
-cmd "hi cursorlinenr guifg=#abb2bf"
+-- cmd "hi cursorlinenr guifg=#abb2bf"
+cmd "hi cursorlinenr guifg=#ffa600"
+cmd "hi CursorLine guifg=#808080"
 
 -- inactive statuslines as thin splitlines
--- cmd("highlight! StatusLineNC gui=underline guifg=#22fcc8")
 cmd("highlight! StatusLineNC gui=underline  guifg=#22fcc8")
 cmd("highlight! StatusLine   guifg=#d55aff")
 

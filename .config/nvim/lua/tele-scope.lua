@@ -1,6 +1,6 @@
 -- telescope
 local actions = require('telescope.actions')
-local utils = require('telescope.utils')
+-- local utils = require('telescope.utils')
 require('telescope').setup{
   defaults = {
 		prompt_prefix = '❯ ',

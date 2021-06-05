@@ -17,6 +17,7 @@
     vim.opt.relativenumber = true
 -- Enable highlighting of current line
     vim.opt.cursorline = true
+    vim.opt.cursorcolumn= true
 -- Fixing tab and space
     vim.opt.tabstop = 4
     vim.opt.shiftwidth = 4
@@ -31,6 +32,9 @@
     vim.opt.splitbelow = true
 -- Vertical split will be to the right
     vim.opt.splitright = true
+-- KeyMappings
+    local opt = {noremap = true, silent = true}
+    vim.api.nvim_set_keymap("n", "<leader>nh", ':set nohlsearch<CR>',opt)
 -- Tweaks
     vim.cmd([[
     set ignorecase
