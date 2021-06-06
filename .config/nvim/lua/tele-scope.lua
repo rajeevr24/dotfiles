@@ -43,7 +43,9 @@ vim.api.nvim_set_keymap("n", "<Leader>fh", [[<Cmd>lua require('telescope.builtin
 vim.api.nvim_set_keymap("n", "<Leader>fe", [[<Cmd>lua require('telescope.builtin').file_explorer()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>cf", [[<Cmd>lua require('tele-scope').grep_config()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>sf", [[<Cmd>lua require('tele-scope').search_file()<CR>]], opt)
-
+vim.api.nvim_set_keymap("n", "<Leader>xw", [[<Cmd>Telescope lsp_workspace_diagnostics<cr>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>xd", [[<Cmd>Telescope lsp_document_diagnostics<cr>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>gr", [[<Cmd>Telescope lsp_references<cr>]], opt)
 local M = {}
 
 function M.grep_prompt()

@@ -7,14 +7,14 @@ return require('packer').startup(function(use)
     use {
         'neovim/nvim-lspconfig', requires = {'onsails/lspkind-nvim'}
     }
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-            }
-        end
-    }
+    -- use {
+    --     "folke/trouble.nvim",
+    --     requires = "kyazdani42/nvim-web-devicons",
+    --     config = function()
+    --         require("trouble").setup {
+    --         }
+    --     end
+    -- }
     -- use {'glepnir/lspsaga.nvim'}
     use {'ray-x/navigator.lua',
         requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}

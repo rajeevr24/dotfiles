@@ -8,8 +8,8 @@ require('plugins')
 -- For Code-Actions and LSP
 
 --require('lsp-saga')
--- require('lsp')
-require('n-trouble')
+--require('lsp')
+--require('n-trouble')
 require('n-navigator')
 
 -- Treesitter
@@ -38,12 +38,12 @@ vim.o.completeopt = "menuone,noselect"
 --Colorscheme
     local base16 = require 'base16'
     -- base16(base16.themes.snazzy, true)
-    base16(base16.themes.brewer, true)
+    -- base16(base16.themes.brewer, true)
     -- base16(base16.themes.twilight, true)
     -- base16(base16.themes.porple, true)
     -- base16(base16.themes.woodland, true)
     -- base16(base16.themes.circus, true)
-    -- base16(base16.themes.atlas, true)
+    base16(base16.themes.atlas, true)
     -- base16(base16.themes["onedark"], true)
     -- vim.o.background = "dark" -- or "light" for light mode
     -- vim.cmd([[colorscheme gruvbox]])
