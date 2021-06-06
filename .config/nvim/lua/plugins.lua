@@ -27,6 +27,7 @@ return require('packer').startup(function(use)
     -- use {'folke/tokyonight.nvim'}
     -- use {'dracula/vim', as = 'dracula'}
     use {'norcalli/nvim-base16.lua'}
+    use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     -- use {'Th3Whit3Wolf/one-nvim'}
     -- For Welcome Screen
     use 'glepnir/dashboard-nvim'

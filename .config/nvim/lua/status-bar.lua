@@ -154,7 +154,8 @@ ins_right {
 ins_right {
   'filetype',
   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = {fg = colors.green, gui = 'bold'}
+  -- color = {fg = colors.green, gui = 'bold'}
+  color = "LualineMode",
 }
 
 ins_right {

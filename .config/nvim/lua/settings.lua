@@ -37,16 +37,18 @@
 -- KeyMappings
     local opt = {noremap = true, silent = true}
     vim.api.nvim_set_keymap("n", "<leader>nh", ':set nohlsearch<CR>',opt)
+-- Clipboard
+    vim.cmd([[set clipboard=unnamedplus ]])
 -- Tweaks
     vim.cmd([[
     set ignorecase
     set smartcase
     set incsearch
     "For pasting into new line
-        nmap ,p o<ESC>p
+        nmap np o<ESC>p
     " For easier access to command
         nnoremap ; :
     "Paste last thing yanked not deleted
         nmap ,p "0p
-        nmap ,P "oP
+        nmap ,P "0P
 ]])

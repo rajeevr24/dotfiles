@@ -89,6 +89,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
+  },
   ["guihua.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/guihua.lua"
@@ -109,6 +113,10 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
   ["navigator.lua"] = {
     loaded = true,
@@ -203,22 +211,22 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: zen-mode.nvim
-time("Config for zen-mode.nvim", true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time("Config for zen-mode.nvim", false)
 -- Config for: lsp-rooter.nvim
 time("Config for lsp-rooter.nvim", true)
 try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
 time("Config for lsp-rooter.nvim", false)
--- Config for: gitsigns.nvim
-time("Config for gitsigns.nvim", true)
-try_loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time("Config for gitsigns.nvim", false)
 -- Config for: trouble.nvim
 time("Config for trouble.nvim", true)
 try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time("Config for trouble.nvim", false)
+-- Config for: gitsigns.nvim
+time("Config for gitsigns.nvim", true)
+try_loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time("Config for gitsigns.nvim", false)
+-- Config for: zen-mode.nvim
+time("Config for zen-mode.nvim", true)
+try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+time("Config for zen-mode.nvim", false)
 if should_profile then save_profiles() end
 
 END
