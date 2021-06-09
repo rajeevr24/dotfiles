@@ -4,12 +4,18 @@
 -- For Ranger Integration
     vim.cmd('source ~/.config/nvim/vimscript/ranger.vim')
 
+-- For autocommands
+    vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
+
 -- For Plugins
     require('plugins')
 
 -- For Code-Actions and LSP
-    --require('lsp')
+    -- require('lsp')
     require('n-navigator')
+
+-- MatchUp
+    require('matchup')
 
 -- Treesitter
     require('treesitter')
@@ -34,21 +40,7 @@
     vim.o.completeopt = "menuone,noselect"
 
 --Colorscheme
-    local base16 = require 'base16'
-    -- base16(base16.themes.snazzy, true)
-    -- base16(base16.themes.brewer, true)
-    -- base16(base16.themes.twilight, true)
-    -- base16(base16.themes.porple, true)
-    -- base16(base16.themes.woodland, true)
-    -- base16(base16.themes.circus, true)
-    base16(base16.themes.atlas, true)
-    -- base16(base16.themes["onedark"], true)
-    -- vim.o.background = "dark" -- or "light" for light mode
-    -- vim.cmd([[colorscheme gruvbox]])
-
--- KeyMappings
-    require('mappings')
-
+    require('colorscheme')
 -- Basic Tweaks
     require('settings')
     require('auto-pair')
@@ -57,42 +49,17 @@
 -- Smooth Scroll
     require('neoscroll').setup()
 
--- require('galaxy-line')
-    require('status-bar')
+-- For statusbar
+    require('statusbar')
     require'colorizer'.setup()
     require('lspicon')
 
 -- For Tabs
-    -- require('barbar')
-    require('tabs')
+    -- require('tabs')
+    require('barbar')
 
 -- Vim Commands
 vim.cmd([[
-" Better window navigation
-	nnoremap <C-h> <C-w>h
-	nnoremap <C-j> <C-w>j
-	nnoremap <C-k> <C-w>k
-	nnoremap <C-l> <C-w>l
-
 " Leader Key
 	let mapleader=" "
-
-" TAB in general mode will move to text buffer
-	nnoremap <silent> <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-	nnoremap <silent> <S-TAB> :bprevious<CR>
-
-" Move selected line / block of text in visual mode
-" shift + k to move up
-" shift + j to move down
-	xnoremap K :move '<-2<CR>gv-gv
-	xnoremap J :move '>+1<CR>gv-gv
-
-
-" Alternate way to save
-	nnoremap <silent> <C-s> :w<CR>
-	nnoremap <silent> <C-x> :wq!<CR>
-"Use control-c instead of escape
-	nnoremap <silent> <C-c> <Esc>
-
 ]])

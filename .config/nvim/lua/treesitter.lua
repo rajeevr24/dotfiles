@@ -3,6 +3,9 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
+  matchup ={
+      enable = true,
+  },
   rainbow = {
   enable = true,
   extended_mode = true,

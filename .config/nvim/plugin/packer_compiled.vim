@@ -62,8 +62,9 @@ time("try_loadstring definition", true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
@@ -71,6 +72,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/barbar.nvim"
+  },
   ["bracey.vim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/bracey.vim"
@@ -79,10 +84,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
+  falcon = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/falcon"
+  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
+  },
+  ["galaxyline.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
@@ -110,10 +123,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lualine.nvim"
-  },
   ["lush.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lush.nvim"
@@ -129,10 +138,6 @@ _G.packer_plugins = {
   ["nvim-base16.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
-  },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -162,6 +167,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/oceanic-next"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -182,10 +191,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
-  ["startuptime.vim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/startuptime.vim"
-  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -193,6 +198,22 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["toast.vim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/toast.vim"
+  },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-matchup"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-startuptime"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-vsnip"] = {
     loaded = true,

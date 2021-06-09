@@ -36,16 +36,22 @@ require('telescope').setup{
 require('telescope').load_extension('fzy_native')
 vim.g.mapleader = " "
 local opt = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("n", "<Leader>ff", [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>ff", [[<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({winblend = 10}))<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fg", [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fb", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>fh", [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>fe", [[<Cmd>lua require('telescope.builtin').file_explorer()<CR>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>cf", [[<Cmd>lua require('tele-scope').grep_config()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>rf", [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>fe", [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>cf", [[<Cmd>lua require('tele-scope').search_config()<CR>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>sf", [[<Cmd>lua require('tele-scope').search_file()<CR>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>gp", [[<Cmd>lua require('tele-scope').grep_prompt()<CR>]], opt)
+-- For LSP
 vim.api.nvim_set_keymap("n", "<Leader>xw", [[<Cmd>Telescope lsp_workspace_diagnostics<cr>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>xd", [[<Cmd>Telescope lsp_document_diagnostics<cr>]], opt)
 vim.api.nvim_set_keymap("n", "<Leader>gr", [[<Cmd>Telescope lsp_references<cr>]], opt)
+vim.api.nvim_set_keymap("n", "<Leader>ds", [[<Cmd>Telescope lsp_document_symbols<cr>]], opt)
+-- Fuzzy Finding
+vim.api.nvim_set_keymap("n", "<Leader>/", [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], opt)
 local M = {}
 
 function M.grep_prompt()
@@ -55,27 +61,14 @@ function M.grep_prompt()
   }
 end
 
-function M.grep_config()
+function M.search_config()
     require('telescope.builtin').find_files({
         prompt_title = " Search Config Files ",
-        prompt_prefix = "    ",
+        prompt_prefix = "   ",
         cwd = "~/.config/nvim"
     })
 end
 
-
--- function M.file_explorer()
---   require('telescope.builtin').file_files({
---     prompt_title = "\\ File Explorer /",
---     shorten_path = false,
---     cwd = "~",
---     width = .25,
---     layout_strategy = 'horizontal',
---     layout_config = {
---       preview_width = 0.65,
---     }
---   })
--- end
 
 function M.search_file()
     require('telescope.builtin').find_files({

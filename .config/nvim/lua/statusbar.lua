@@ -1,7 +1,7 @@
+
 local gl = require('galaxyline')
 
 local colors = {
-    -- bg = '#2E2E2E',
     bg = '#292D38',
     yellow = '#DCDCAA',
     dark_yellow = '#D7BA7D',
@@ -12,7 +12,7 @@ local colors = {
     orange = '#FF8800',
     purple = '#C586C0',
     magenta = '#D16D9E',
-    grey = '#858585',
+    grey = '#43454F',
     blue = '#569CD6',
     vivid_blue = '#4FC1FF',
     light_blue = '#9CDCFE',
@@ -51,7 +51,7 @@ gls.left[1] = {
                 t = colors.blue
             }
             vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-              return ' ▊   '
+              return '    '
         end,
         highlight = {colors.red, colors.bg}
     }
@@ -69,23 +69,20 @@ gls.left[2] = {
     }
 }
 
-
 gls.left[3] = {
     GitBranch = {
         provider = 'GitBranch',
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.grey, colors.bg}
+        highlight = {colors.green, colors.bg}
     }
 }
-
-
 gls.left[4] = {
     DiffAdd = {
         provider = 'DiffAdd',
         condition = condition.hide_in_width,
-        icon = '     ',
+        icon = '    ',
         highlight = {colors.green, colors.bg}
     }
 }
@@ -95,7 +92,7 @@ gls.left[5] = {
     DiffRemove = {
         provider = 'DiffRemove',
         condition = condition.hide_in_width,
-        icon = '    ',
+        icon = '   ',
         highlight = {colors.red, colors.bg}
     }
 }
@@ -108,8 +105,8 @@ gls.left[5] = {
              if tbl[vim.bo.filetype] then return false end
              return true
          end,
-         icon = ' ',
-         highlight = {colors.grey, colors.bg}
+         icon = ' LSP:',
+         highlight = {colors.vivid_blue, colors.grey}
      }
  }
 
@@ -126,33 +123,29 @@ gls.right[3] = {
 gls.right[4] = {DiagnosticInfo = {provider = 'DiagnosticInfo', icon = '  ', separator = '', highlight = {colors.info_yellow, colors.bg}}}
 
 
-
-
-
 gls.right[5] = {
     LineInfo = {
         provider = 'LineColumn',
-        separator = '  ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.purple, colors.bg}
+        separator = ' ',
+        separator_highlight = {colors.light_green, colors.bg},
+        highlight = {colors.info_yellow, colors.bg}
     }
 }
 
 gls.right[6] = {
     PerCent = {
         provider = 'LinePercent',
-        separator = ' ⏽ ',
+        separator = '',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.purple, colors.bg}
+        highlight = {colors.info_yellow, colors.bg}
     }
 }
 
 gls.right[7] = {
     ScrollBar = {
-        -- provider = 'FileTypeName',
         provider = 'ScrollBar',
         condition = condition.hide_in_width,
-        separator = ' ⏽ ',
+        separator = ' ',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.blue, colors.bg}
     }
@@ -161,22 +154,21 @@ gls.right[7] = {
 gls.right[8] = {
     BufferType = {
         provider = 'FileIcon',
-        condition = condition.hide_in_width,
-        separator = ' ⏽ ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.green, colors.bg}
+        condition = condition.buffer_not_empty,
+        separator = '  ',
+        separator_highlight = {colors.orange, colors.bg},
+        highlight = {colors.grey, colors.orange}
     }
 }
 
 
 gls.right[9] = {
     FileEncode = {
-        provider = 'FileFormat',
+        provider = 'FileName',
         condition = condition.hide_in_width,
-        separator = ' ⏽ ',
-        icon = '  ',
+        separator = '',
         separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.blue, colors.bg}
+        highlight = {colors.grey, colors.orange}
     }
 }
 
@@ -184,10 +176,10 @@ gls.right[9] = {
 gls.right[10] = {
     Space = {
         provider = function()
-            return ' '
+            return '  '
         end,
         separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
+        -- separator_highlight = {'NONE', colors.bg},
         highlight = {colors.orange, colors.bg}
     }
 }

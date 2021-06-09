@@ -44,8 +44,24 @@ vim.g.nvim_tree_icons = {
     git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
     folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
-vim.cmd([[
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-]])
+
+-- KeyMappings
+
+vim.g.mapleader = " "
+local opt = {noremap = true, silent = true}
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opt)
+vim.api.nvim_set_keymap('n', '<Leader>r', ':NvimTreeRefresh<CR>', opt)
+vim.api.nvim_set_keymap('n', '<Leader>n', ':NvimTreeFindFile<CR>', opt)
+
+local tree ={}
+tree.open = function ()
+   require'bufferline.state'.set_offset(31, 'FileTree')
+   require'nvim-tree'.find_file(true)
+end
+
+tree.close = function ()
+   require'bufferline.state'.set_offset(0)
+   require'nvim-tree'.close()
+end
+
+return tree
