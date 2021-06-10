@@ -7,6 +7,9 @@
 -- For autocommands
     vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
 
+-- For Illuminate
+    vim.cmd('source ~/.config/nvim/vimscript/illuminate.vim')
+
 -- For Plugins
     require('plugins')
 
@@ -39,12 +42,14 @@
     require('completion')
     vim.o.completeopt = "menuone,noselect"
 
---Colorscheme
-    require('colorscheme')
+
 -- Basic Tweaks
     require('settings')
     require('auto-pair')
     require('custom_highlights')
+
+--Colorscheme
+    require('colorscheme')
 
 -- Smooth Scroll
     require('neoscroll').setup()

@@ -1,4 +1,3 @@
-
 local gl = require('galaxyline')
 
 local colors = {
@@ -22,7 +21,7 @@ local colors = {
 }
 local condition = require('galaxyline.condition')
 local gls = gl.section
-gl.short_line_list = {'NvimTree', 'packer'}
+gl.short_line_list = {'NvimTree', 'packer', 'undotree'}
 
 gls.left[1] = {
     ViMode = {
@@ -106,7 +105,8 @@ gls.left[5] = {
              return true
          end,
          icon = ' LSP:',
-         highlight = {colors.vivid_blue, colors.grey}
+         -- highlight = {colors.vivid_blue, colors.grey}
+         highlight = {colors.cyan, colors.bg}
      }
  }
 
@@ -176,10 +176,10 @@ gls.right[9] = {
 gls.right[10] = {
     Space = {
         provider = function()
-            return '  '
+            return ' '
         end,
         separator = ' ',
-        -- separator_highlight = {'NONE', colors.bg},
+        separator_highlight = {'NONE', colors.bg},
         highlight = {colors.orange, colors.bg}
     }
 }

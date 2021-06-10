@@ -71,8 +71,11 @@
     -- Resizing Panes
     vim.api.nvim_set_keymap("n", "<C-Up>", ":resize +2<CR>",opt)
     vim.api.nvim_set_keymap("n", "<C-Down>", ":resize -2<CR>",opt)
-    vim.api.nvim_set_keymap("n", "<C-Right>", ":vertical resize -2<CR>",opt)
-    vim.api.nvim_set_keymap("n", "<C-Left>", ":vertical resize +2<CR>",opt)
+    vim.api.nvim_set_keymap("n", "<C-Right>", ":vertical resize -2<CR>", opt)
+    vim.api.nvim_set_keymap("n", "<C-Left>", ":vertical resize +2<CR>", opt)
+
+    -- For Packer
+    vim.api.nvim_set_keymap("n", "<leader>pl", ":PackerLoad", opt)
 
 -- Clipboard
     vim.cmd([[set clipboard=unnamedplus ]])
@@ -83,6 +86,10 @@
     "For pasting into new line
         nmap np o<ESC>p
  
+        
+    " For Undo
+    nnoremap <F5> :UndotreeToggle<CR>
+
     " Mapping ; to : for easier access
         nnoremap ; :
 

@@ -1,11 +1,12 @@
 local cmd = vim.cmd
 
 --misc--
-cmd "hi LineNr term=bold cterm=bold guifg=#00ff00 guibg=NONE cterm=NONE gui=NONE"
+cmd "hi LineNr term=bold cterm=bold guifg=#00ff00 guibg=#00ff00 cterm=NONE gui=NONE"
 cmd "hi Comment guifg=#595959"
 -- cmd "hi Comment guifg=#4d4d33"
 cmd "hi VertSplit guifg=#22fcc8"
 cmd "hi EndOfBuffer guifg=#1e222a"
+
 -- Pmenu
 cmd "hi PmenuSel guibg=#8c8c8c"
 cmd "hi Pmenu  guibg=#282c34"
@@ -33,8 +34,3 @@ cmd "hi TelescopeBorder   guifg=#d55aff"
 cmd "hi TelescopePromptBorder   guifg=#ccffff"
 cmd "hi TelescopeResultsBorder  guifg=#ccffff"
 cmd "hi TelescopePreviewBorder  guifg=#996633"
-
--- MatchUp
-cmd "hi MatchWord guifg=blue cterm=underline gui=underline"
-cmd "hi MatchParenCur cterm=underline gui=underline"
-cmd "hi MatchWordCur cterm=underline gui=underline"

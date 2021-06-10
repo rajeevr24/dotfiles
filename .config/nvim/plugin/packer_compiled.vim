@@ -72,6 +72,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  aurora = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/aurora"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -84,9 +88,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
-  falcon = {
+  dracula = {
     loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/falcon"
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dracula"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -134,6 +138,10 @@ _G.packer_plugins = {
   ["neoscroll.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/neoscroll.nvim"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
   ["nvim-base16.lua"] = {
     loaded = true,
@@ -199,13 +207,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  ["toast.vim"] = {
+  undotree = {
     loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/toast.vim"
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/undotree"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-illuminate"
   },
   ["vim-matchup"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-matchup"
+  },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-sleuth"
   },
   ["vim-startuptime"] = {
     loaded = true,
@@ -215,6 +231,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-vsnip"
@@ -223,6 +243,10 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
+  },
+  ["zephyr-nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 

@@ -2,6 +2,7 @@ return require('packer').startup(function(use)
 -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+
 -- LSP and Diagnostic Support
     use {
         'neovim/nvim-lspconfig', requires = {'onsails/lspkind-nvim'}
@@ -9,22 +10,30 @@ return require('packer').startup(function(use)
     use {'ray-x/navigator.lua',
         requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
+-- For Highlighting
+    use {'RRethy/vim-illuminate'}
+
 -- Match Up
     use 'andymass/vim-matchup'
 
--- For opening closing bracket
+-- For opening closing bracket and indentation
     use 'tpope/vim-surround'
+    use 'tpope/vim-sleuth'
+    use 'tpope/vim-unimpaired'
+
+-- For Undo History
+    use 'mbbill/undotree'
 
 -- For Live Server
     use {'turbio/bracey.vim', run = 'npm install --prefix server'}
 
 -- Colorscheme
-    -- use {'dracula/vim', as = 'dracula'}
-    use 'norcalli/nvim-base16.lua'
+    use {'dracula/vim', as = 'dracula'}
     use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
-    use 'fenetikm/falcon'
     use 'mhartington/oceanic-next'
-    use 'jsit/toast.vim'
+    use 'glepnir/zephyr-nvim'
+    use 'ray-x/aurora'
+    use 'RRethy/nvim-base16'
 
 -- For Welcome Screen
     use 'glepnir/dashboard-nvim'
@@ -43,7 +52,6 @@ return require('packer').startup(function(use)
     use 'b3nj5m1n/kommentary'
 
 -- For Tabs
-    -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
 -- Fuzzy Finder
@@ -52,7 +60,7 @@ return require('packer').startup(function(use)
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},{'nvim-telescope/telescope-fzy-native.nvim'}}
     }
 
--- Auto-Completion
+-- Auto-Completion and Snippet
     use {'hrsh7th/nvim-compe', requires = {{ 'hrsh7th/vim-vsnip'}, {'rafamadriz/friendly-snippets', opt = true}}}
 
 -- Post-install/update hook with neovim command
