@@ -72,4 +72,7 @@ alias config='/usr/bin/git --git-dir=/home/rajeev/.cfg/ --work-tree=/home/rajeev
 #Don't need node history
 export NODE_REPL_HISTORY=""
 
+#asdf config
+. $HOME/.asdf/asdf.sh
+
 alias luamake=/home/rajeev/lua-language-server/3rd/luamake/luamake

@@ -1,67 +1,64 @@
 -- For WSL Clipboard Support
-    vim.cmd('source ~/.config/nvim/vimscript/clipboard.vim')
-
--- For Ranger Integration
-    vim.cmd('source ~/.config/nvim/vimscript/ranger.vim')
+vim.cmd('source ~/.config/nvim/vimscript/clipboard.vim')
 
 -- For autocommands
-    vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
-
--- For Illuminate
-    vim.cmd('source ~/.config/nvim/vimscript/illuminate.vim')
+vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
 
 -- For Plugins
-    require('plugins')
+require('plugins')
 
 -- For Code-Actions and LSP
-    -- require('lsp')
-    require('n-navigator')
+-- require('lsp')
+require('nvim-navigator')
+require'lsp_signature'.on_attach()
 
 -- MatchUp
-    require('matchup')
+require('matchup')
+
+-- Icons
+require('nvim-devicons')
 
 -- Treesitter
-    require('treesitter')
+require('treesitter')
 
 -- File Explorer
-    require('tree')
+require('tree')
 
 -- For Commentary
-    require('commentary')
+require('commentary')
 
 -- Settings that work for me
-    require('settings')
+require('settings')
 
 -- For Telescope
-    require('tele-scope')
+require('nvim-telescope')
 
 -- For Welcome Screen
-    require('dashboard')
+require('dashboard')
 
 -- Auto-Completion
-    require('completion')
-    vim.o.completeopt = "menuone,noselect"
+require('completion')
+vim.o.completeopt = "menuone,noselect"
 
+require('auto-pair')
+require('custom_highlights')
+require'colorizer'.setup()
 
--- Basic Tweaks
-    require('settings')
-    require('auto-pair')
-    require('custom_highlights')
-
---Colorscheme
-    require('colorscheme')
+-- Colorscheme
+require('colorscheme')
 
 -- Smooth Scroll
-    require('neoscroll').setup()
+require('neoscroll').setup()
 
 -- For statusbar
-    require('statusbar')
-    require'colorizer'.setup()
-    require('lspicon')
+require('statusbar')
 
 -- For Tabs
-    -- require('tabs')
-    require('barbar')
+-- require('tabs')
+require('barbar')
+
+-- Basic Tweaks
+require('settings')
 
 -- Vim Commands
 vim.cmd([[

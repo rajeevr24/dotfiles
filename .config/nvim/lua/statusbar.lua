@@ -49,8 +49,9 @@ gls.left[1] = {
                 ['!'] = colors.blue,
                 t = colors.blue
             }
-            vim.api.nvim_command('hi GalaxyViMode guifg=' .. mode_color[vim.fn.mode()])
-              return '    '
+            vim.api.nvim_command('hi GalaxyViMode guifg=' ..
+                                     mode_color[vim.fn.mode()])
+            return '    '
         end,
         highlight = {colors.red, colors.bg}
     }
@@ -58,9 +59,7 @@ gls.left[1] = {
 
 gls.left[2] = {
     GitIcon = {
-        provider = function()
-            return '  '
-        end,
+        provider = function() return '  ' end,
         condition = condition.check_git_workspace,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
@@ -86,7 +85,6 @@ gls.left[4] = {
     }
 }
 
-
 gls.left[5] = {
     DiffRemove = {
         provider = 'DiffRemove',
@@ -96,32 +94,54 @@ gls.left[5] = {
     }
 }
 
- gls.mid[5] = {
-     ShowLspClient = {
-         provider = 'GetLspClient',
-         condition = function()
-             local tbl = {['dashboard'] = true, [' '] = true}
-             if tbl[vim.bo.filetype] then return false end
-             return true
-         end,
-         icon = ' LSP:',
-         -- highlight = {colors.vivid_blue, colors.grey}
-         highlight = {colors.cyan, colors.bg}
-     }
- }
-
+gls.mid[5] = {
+    ShowLspClient = {
+        provider = 'GetLspClient',
+        condition = function()
+            local tbl = {['dashboard'] = true, [' '] = true}
+            if tbl[vim.bo.filetype] then return false end
+            return true
+        end,
+        icon = ' LSP:',
+        -- highlight = {colors.vivid_blue, colors.grey}
+        highlight = {colors.cyan, colors.bg}
+    }
+}
 
 gls.right[1] = {
-    DiagnosticError = {provider = 'DiagnosticError', icon = '  ', separator = '', highlight = {colors.error_red, colors.bg}}
+    DiagnosticError = {
+        provider = 'DiagnosticError',
+        icon = '  ',
+        separator = '',
+        highlight = {colors.error_red, colors.bg}
+    }
 }
-gls.right[2] = {DiagnosticWarn = {provider = 'DiagnosticWarn',  icon = '  ', separator = '', highlight = {colors.orange, colors.bg}}}
+gls.right[2] = {
+    DiagnosticWarn = {
+        provider = 'DiagnosticWarn',
+        icon = '  ',
+        separator = '',
+        highlight = {colors.orange, colors.bg}
+    }
+}
 
 gls.right[3] = {
-    DiagnosticHint = {provider = 'DiagnosticHint', icon = '  ', separator = '', highlight = {colors.vivid_blue, colors.bg}}
+    DiagnosticHint = {
+        provider = 'DiagnosticHint',
+        icon = '  ',
+        separator = '',
+        highlight = {colors.vivid_blue, colors.bg}
+    }
 }
 
-gls.right[4] = {DiagnosticInfo = {provider = 'DiagnosticInfo', icon = '  ', separator = '', highlight = {colors.info_yellow, colors.bg}}}
-
+gls.right[4] = {
+    DiagnosticInfo = {
+        provider = 'DiagnosticInfo',
+        icon = '  ',
+        separator = '',
+        highlight = {colors.info_yellow, colors.bg}
+    }
+}
 
 gls.right[5] = {
     LineInfo = {
@@ -141,15 +161,15 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
-    ScrollBar = {
-        provider = 'ScrollBar',
-        condition = condition.hide_in_width,
-        separator = ' ',
-        separator_highlight = {'NONE', colors.bg},
-        highlight = {colors.blue, colors.bg}
-    }
-}
+-- gls.right[7] = {
+--     ScrollBar = {
+--         provider = 'ScrollBar',
+--         condition = condition.hide_in_width,
+--         separator = ' ',
+--         separator_highlight = {'NONE', colors.bg},
+--         highlight = {colors.blue, colors.bg}
+--     }
+-- }
 
 gls.right[8] = {
     BufferType = {
@@ -160,7 +180,6 @@ gls.right[8] = {
         highlight = {colors.grey, colors.orange}
     }
 }
-
 
 gls.right[9] = {
     FileEncode = {
@@ -175,9 +194,7 @@ gls.right[9] = {
 -- This function gives space on the right side
 gls.right[10] = {
     Space = {
-        provider = function()
-            return ' '
-        end,
+        provider = function() return ' ' end,
         separator = ' ',
         separator_highlight = {'NONE', colors.bg},
         highlight = {colors.orange, colors.bg}

@@ -1,17 +1,14 @@
-" Automatically generated packer.nvim plugin loader code
+-- Automatically generated packer.nvim plugin loader code
 
-if !has('nvim-0.5')
-  echohl WarningMsg
-  echom "Invalid Neovim version for packer.nvim!"
-  echohl None
-  finish
-endif
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
+  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
+  return
+end
 
-packadd packer.nvim
+vim.api.nvim_command('packadd packer.nvim')
 
-try
+local no_errors, error_msg = pcall(function()
 
-lua << END
   local time
   local profile_info
   local should_profile = false
@@ -46,7 +43,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/home/rajeev/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/rajeev/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/rajeev/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/rajeev/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/rajeev/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,8 +54,8 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
@@ -69,13 +66,9 @@ local function try_loadstring(s, component, name)
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  aurora = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/aurora"
-  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/barbar.nvim"
@@ -87,10 +80,6 @@ _G.packer_plugins = {
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
-  },
-  dracula = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dracula"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -106,10 +95,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
-  },
   ["guihua.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/guihua.lua"
@@ -123,13 +108,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lsp-rooter.nvim"
   },
-  ["lspkind-nvim"] = {
+  ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
-  },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lush.nvim"
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
   ["navigator.lua"] = {
     loaded = true,
@@ -143,10 +124,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-base16"
   },
-  ["nvim-base16.lua"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-base16.lua"
-  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
@@ -158,6 +135,10 @@ _G.packer_plugins = {
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["nvim-toggleterm.lua"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -174,10 +155,6 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["oceanic-next"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/oceanic-next"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -199,6 +176,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
+  ["startuptime.vim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/startuptime.vim"
+  },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
@@ -207,13 +188,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/undotree"
   },
-  ["vim-illuminate"] = {
+  ["vim-lua-format"] = {
     loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-illuminate"
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-lua-format"
   },
   ["vim-matchup"] = {
     loaded = true,
@@ -222,10 +207,6 @@ _G.packer_plugins = {
   ["vim-sleuth"] = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-sleuth"
-  },
-  ["vim-startuptime"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -243,33 +224,26 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
-  },
-  ["zephyr-nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 
-time("Defining packer_plugins", false)
+time([[Defining packer_plugins]], false)
 -- Config for: lsp-rooter.nvim
-time("Config for lsp-rooter.nvim", true)
+time([[Config for lsp-rooter.nvim]], true)
 try_loadstring("\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
-time("Config for lsp-rooter.nvim", false)
+time([[Config for lsp-rooter.nvim]], false)
 -- Config for: gitsigns.nvim
-time("Config for gitsigns.nvim", true)
+time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time("Config for gitsigns.nvim", false)
+time([[Config for gitsigns.nvim]], false)
 -- Config for: zen-mode.nvim
-time("Config for zen-mode.nvim", true)
+time([[Config for zen-mode.nvim]], true)
 try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time("Config for zen-mode.nvim", false)
+time([[Config for zen-mode.nvim]], false)
 if should_profile then save_profiles() end
 
-END
+end)
 
-catch
-  echohl ErrorMsg
-  echom "Error in packer_compiled: " .. v:exception
-  echom "Please check your config for correctness"
-  echohl None
-endtry
+if not no_errors then
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
+end
