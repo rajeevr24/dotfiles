@@ -28,3 +28,6 @@ cmd "hi TelescopeBorder   guifg=#d55aff"
 cmd "hi TelescopePromptBorder   guifg=#ccffff"
 cmd "hi TelescopeResultsBorder  guifg=#ccffff"
 cmd "hi TelescopePreviewBorder  guifg=#996633"
+
+-- Dashboard
+cmd "hi DashboardFooter guifg=#00e68a"

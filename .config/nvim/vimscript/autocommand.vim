@@ -14,13 +14,6 @@ augroup END
   autocmd ColorScheme * hi cursorlinenr guifg=#ffa600
   autocmd ColorScheme * hi LineNr guifg=#666699
 
-" For Auto-Format
- " augroup Format
- "    autocmd!
- "    autocmd BufWritePost * FormatWrite
- " augroup END autocmd BufEnter * silent! :lcd%:p:h
-  autocmd FileType lua nnoremap <buffer> <c-k> :call LuaFormat()<cr>
-  autocmd BufWrite *.lua call LuaFormat()
 " For Undo-tree
   if has("persistent_undo")
    let target_path = expand('~/.config/.undodir')

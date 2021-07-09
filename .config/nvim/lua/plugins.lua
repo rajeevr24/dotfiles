@@ -3,31 +3,38 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- LSP and Diagnostic Support
-    use {'neovim/nvim-lspconfig'}
+    use {'neovim/nvim-lspconfig', event = 'BufRead'}
     use {
         'ray-x/navigator.lua',
-        requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
-    }
+        requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
+	after = 'nvim-lspconfig',
+	config = function()
+		require 'nvim-navigator'
+	end}
     use {'ray-x/lsp_signature.nvim'}
 
     -- Match Up
-    use 'andymass/vim-matchup'
+    use {'andymass/vim-matchup', event = 'VimEnter', config = function ()
+        require 'matchup'
+    end}
 
     -- For opening closing bracket and indentation
-    use {'tpope/vim-surround'}
-    use {'tpope/vim-sleuth'}
-    use {'tpope/vim-unimpaired'}
-    use {'steelsojka/pears.nvim'}
+    use {'tpope/vim-surround', event = 'VimEnter'}
+    -- use {'tpope/vim-sleuth'}
+    use {'tpope/vim-unimpaired', event = 'VimEnter'}
+    use {'steelsojka/pears.nvim', event = 'VimEnter',
+    config = function ()
+        require 'auto-pair'
+    end}
 
     -- For Formatting
-    -- use { 'lukas-reineke/format.nvim' }
-    use {'andrejlevkovitch/vim-lua-format'}
+    use {'andrejlevkovitch/vim-lua-format', ft = {'lua'}}
 
     -- For Undo History
-    use 'mbbill/undotree'
+    use {'mbbill/undotree'}
 
     -- For Live Server
-    use {'turbio/bracey.vim', run = 'npm install --prefix server'}
+    use {'turbio/bracey.vim', run = 'npm install --prefix server', opt = true}
 
     -- Colorscheme
     -- use {'dracula/vim', as = 'dracula'}
@@ -35,77 +42,100 @@ return require('packer').startup(function(use)
     -- use 'glepnir/zephyr-nvim'
     -- use 'ray-x/aurora'
     use {'RRethy/nvim-base16'}
-    use {'folke/tokyonight.nvim'}
-    -- use 'rafamadriz/neon'
+    -- use {'folke/tokyonight.nvim'}
 
     -- For Welcome Screen
     use {'glepnir/dashboard-nvim'}
 
     -- File Explorer
-    use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-    use 'kevinhwang91/rnvimr'
+    use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons', cmd = 'NvimTreeToggle', config = function ()
+        require 'tree'
+    end}
+    use { 'kevinhwang91/rnvimr', cmd = 'RnvimrToggle' }
     use {
         'ahmedkhalf/lsp-rooter.nvim',
         config = function() require("lsp-rooter").setup {} end
     }
 
     -- For Comments
-    use {'b3nj5m1n/kommentary'}
+    use {'b3nj5m1n/kommentary', event = 'VimEnter', config = function ()
+        require 'commentary'
+    end }
 
     -- For Tabs
-    use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {
+        'romgrk/barbar.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require 'barbar' end,
+        event = 'BufWinEnter'
+    }
 
     -- Fuzzy Finder
     use {
         'nvim-telescope/telescope.nvim',
         requires = {
             {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},
-            {'nvim-telescope/telescope-fzy-native.nvim'}
-        }
+            {'nvim-telescope/telescope-fzy-native.nvim', run = 'make'}
+        },
+        event = 'BufWinEnter',
+        config = function ()
+            require 'nvim-telescope'
+        end
     }
 
     -- Auto-Completion and Snippet
     use {
         'hrsh7th/nvim-compe',
-        requires = {
-            {'hrsh7th/vim-vsnip'}, {'rafamadriz/friendly-snippets', opt = true}
-        }
+        requires = {{'hrsh7th/vim-vsnip', event = 'InsertEnter'}, {'rafamadriz/friendly-snippets', event = 'InsertEnter'}},
+        config = function ()
+            require 'completion'
+        end, event = 'InsertEnter'
     }
 
     -- Post-install/update hook with neovim command
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', event = 'BufRead', config = function ()
+        require 'treesitter'
+    end}
 
     --  Colorizer and Icons
-    use {'p00f/nvim-ts-rainbow'}
-    use {'norcalli/nvim-colorizer.lua'}
+    use {'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'}
+    use {
+        'norcalli/nvim-colorizer.lua',
+        event = 'BufWinEnter',
+        config = function() require'colorizer'.setup() end
+    }
 
     -- For Beautiful statusline
     use {
         'glepnir/galaxyline.nvim',
         branch = 'main',
-        requires = {'kyazdani42/nvim-web-devicons'}
+        requires = {'kyazdani42/nvim-web-devicons'},
+        config = function ()
+            require 'statusbar'
+        end
     }
 
     -- For Gir Status
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
-        config = function() require('gitsigns').setup() end
+        config = function() require('gitsigns').setup() end,
+        event = 'BufRead'
     }
 
     -- Tweaking Vim
-    use {'tweekmonster/startuptime.vim'}
+    use {'tweekmonster/startuptime.vim', cmd = "StartupTime"}
     -- use { 'dstein64/vim-startuptime' }
 
     -- Smooth Scroll
-    use {'karb94/neoscroll.nvim'}
+    -- use {'karb94/neoscroll.nvim'}
 
     -- For Zen Mode
     use {
         "folke/zen-mode.nvim",
         config = function() require("zen-mode").setup {} end
     }
-
     -- Terminal --
-    use 'akinsho/nvim-toggleterm.lua'
+    use { 'akinsho/nvim-toggleterm.lua',
+    cmd = "ToggleTerm"}
 end)

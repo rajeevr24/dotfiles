@@ -102,7 +102,7 @@ gls.mid[5] = {
             if tbl[vim.bo.filetype] then return false end
             return true
         end,
-        icon = ' LSP:',
+        icon = ' LSP: ',
         -- highlight = {colors.vivid_blue, colors.grey}
         highlight = {colors.cyan, colors.bg}
     }

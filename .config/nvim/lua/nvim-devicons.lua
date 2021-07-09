@@ -3,6 +3,7 @@ require('nvim-web-devicons').setup({
         html = {icon = '', color = '#E34F26', name = 'HTML'},
         css = {icon = '', color = '#1572B6', name = 'CSS'},
         js = {icon = '', color = '#F7DF1E', name = 'JavaScript'},
+        ltx = {icon = 'ﭨ', color = '#F7DF1E', name = 'Latex'},
         ts = {icon = 'ﯤ', color = '#3178C6', name = 'TypeScript'},
         Dockerfile = {icon = '', color = '#2496ED', name = 'Dockerfile'},
         rb = {icon = '', color = '#CC342D', name = 'Ruby'},
