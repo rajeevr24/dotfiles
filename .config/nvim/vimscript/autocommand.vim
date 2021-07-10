@@ -13,6 +13,7 @@ augroup END
   " For line number --
   autocmd ColorScheme * hi cursorlinenr guifg=#ffa600
   autocmd ColorScheme * hi LineNr guifg=#666699
+  " autocmd ColorScheme * hi Normal cterm=NONE ctermbg=#191919
 
 " For Undo-tree
   if has("persistent_undo")

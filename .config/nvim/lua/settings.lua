@@ -15,6 +15,10 @@ vim.opt.mouse = 'a'
 -- Show current line number
 vim.opt.number = true
 
+-- Don't need showmode
+vim.opt.showmode = false
+vim.opt.shortmess:append "c"
+
 -- Show command Height
 vim.opt.cmdheight = 1
 

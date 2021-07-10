@@ -23,6 +23,8 @@ require'compe'.setup {
     }
 }
 
+vim.o.completeopt = "menuone,noselect"
+
 -- For Auto-Completion
 vim.cmd([[
 inoremap <silent><expr> <C-z>     compe#close('<C-e>')

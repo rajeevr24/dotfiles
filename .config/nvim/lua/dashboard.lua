@@ -66,7 +66,7 @@ vim.g.dashboard_custom_section = {
 }
 
 vim.g.dashboard_custom_footer = {
-    'Nvim loaded ' .. plugins_count .. ' plugins  '
+    'LuaJIT loaded ' .. plugins_count .. ' plugins  '
 }
 vim.cmd([[
 autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2

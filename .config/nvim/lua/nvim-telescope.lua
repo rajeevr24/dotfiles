@@ -4,7 +4,7 @@ local actions = require('telescope.actions')
 -- local utils = require('telescope.utils')
 require('telescope').setup {
     defaults = {
-        prompt_prefix = '❯ ',
+        prompt_prefix = '  ',
         selection_caret = '❯ ',
         color_devicons = true,
         sorting_strategy = "ascending",
