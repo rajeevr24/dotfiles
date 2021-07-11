@@ -62,15 +62,6 @@ return require('packer').startup(function(use)
     -- use 'ray-x/aurora'
     use {'RRethy/nvim-base16'}
     -- use {'folke/tokyonight.nvim'}
-    -- use {
-    --     'projekt0n/github-nvim-theme',
-    --     config = function()
-    --         require('github-theme').setup({
-    --             themeStyle = 'dark',
-    --             sidebars = {"packer"}
-    --         })
-    --     end
-    -- }
 
     -- For Welcome Screen
     use {'glepnir/dashboard-nvim', config = function() require 'dashboard' end}
@@ -163,14 +154,9 @@ return require('packer').startup(function(use)
     use {'tweekmonster/startuptime.vim', cmd = "StartupTime"}
     -- use { 'dstein64/vim-startuptime' }
 
-    -- Smooth Scroll
-    -- use {'karb94/neoscroll.nvim'}
-
     -- For Zen Mode
     use {
         "folke/zen-mode.nvim",
         config = function() require("zen-mode").setup {} end
     }
-    -- Terminal --
-    use {'akinsho/nvim-toggleterm.lua', cmd = "ToggleTerm"}
 end)
