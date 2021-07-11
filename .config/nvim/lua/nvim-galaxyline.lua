@@ -23,42 +23,42 @@ local condition = require('galaxyline.condition')
 local gls = gl.section
 gl.short_line_list = {'NvimTree', 'packer', 'undotree'}
 
--- gls.left[1] = {
---     ViMode = {
---         provider = function()
---             -- auto change color according the vim mode
---             local mode_color = {
---                 n = colors.info_yellow,
---                 i = colors.orange,
---                 v = colors.purple,
---                 [''] = colors.purple,
---                 V = colors.purple,
---                 c = colors.magenta,
---                 no = colors.blue,
---                 s = colors.orange,
---                 S = colors.orange,
---                 [''] = colors.orange,
---                 ic = colors.yellow,
---                 R = colors.red,
---                 Rv = colors.red,
---                 cv = colors.blue,
---                 ce = colors.blue,
---                 r = colors.cyan,
---                 rm = colors.cyan,
---                 ['r?'] = colors.cyan,
---                 ['!'] = colors.blue,
---                 t = colors.blue
---             }
---             vim.api.nvim_command('hi GalaxyViMode guifg=' ..
---                                      mode_color[vim.fn.mode()])
---             return '     '
---         end,
---         separator = ' ',
---         separator_highlight = {'NONE', colors.bg},
---         highlight = {colors.red, colors.bg}
---         -- highlight = {colors.red, colors.vivid_blue}
---     }
--- }
+-- -- gls.left[1] = {
+-- --     ViMode = {
+-- --         provider = function()
+-- --             -- auto change color according the vim mode
+-- --             local mode_color = {
+-- --                 n = colors.info_yellow,
+-- --                 i = colors.orange,
+-- --                 v = colors.purple,
+-- --                 [''] = colors.purple,
+-- --                 V = colors.purple,
+-- --                 c = colors.magenta,
+-- --                 no = colors.blue,
+-- --                 s = colors.orange,
+-- --                 S = colors.orange,
+-- --                 [''] = colors.orange,
+-- --                 ic = colors.yellow,
+-- --                 R = colors.red,
+-- --                 Rv = colors.red,
+-- --                 cv = colors.blue,
+-- --                 ce = colors.blue,
+-- --                 r = colors.cyan,
+-- --                 rm = colors.cyan,
+-- --                 ['r?'] = colors.cyan,
+-- --                 ['!'] = colors.blue,
+-- --                 t = colors.blue
+-- --             }
+-- --             vim.api.nvim_command('hi GalaxyViMode guifg=' ..
+-- --                                      mode_color[vim.fn.mode()])
+-- --             return '     '
+-- --         end,
+-- --         separator = ' ',
+-- --         separator_highlight = {'NONE', colors.bg},
+-- --         highlight = {colors.red, colors.bg}
+-- --         -- highlight = {colors.red, colors.vivid_blue}
+-- --     }
+-- -- }
 
 
 local mode_color = function()
@@ -250,3 +250,4 @@ gls.right[10] = {
         highlight = {colors.orange, colors.bg}
     }
 }
+

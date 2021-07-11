@@ -1,6 +1,6 @@
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use {'wbthomason/packer.nvim'}
 
     -- LSP and Diagnostic Support
     use {'neovim/nvim-lspconfig', event = 'BufRead'}
@@ -10,27 +10,41 @@ return require('packer').startup(function(use)
         after = 'nvim-lspconfig',
         config = function() require 'nvim-navigator' end
     }
-    use {'ray-x/lsp_signature.nvim', after = 'nvim-lspconfig',
-    config = function ()
-        require("lsp_signature").on_attach()
-    end}
+    use {
+        'ray-x/lsp_signature.nvim',
+        after = 'nvim-lspconfig',
+        config = function() require("lsp_signature").on_attach() end
+    }
 
     -- Match Up
     use {
         'andymass/vim-matchup',
-        event = 'VimEnter',
+        event = 'CursorMoved',
         config = function() require 'matchup' end
     }
 
     -- For opening closing bracket and indentation
-    use {'tpope/vim-surround', event = 'VimEnter'}
+    use {'tpope/vim-surround', event = 'BufRead'}
     -- use {'tpope/vim-sleuth'}
-    use {'tpope/vim-unimpaired', event = 'VimEnter'}
-    use {
-        'steelsojka/pears.nvim',
-        after = 'nvim-compe',
-        config = function() require 'auto-pair' end
-    }
+    use {'tpope/vim-unimpaired', event = 'InsertEnter'}
+    -- use {
+    --     'steelsojka/pears.nvim',
+    --     after = 'nvim-compe',
+    --     config = function() require 'auto-pair' end
+    -- }
+        use {
+            "windwp/nvim-autopairs",
+            after = "nvim-compe",
+            config = function()
+                require("nvim-autopairs").setup()
+                require("nvim-autopairs.completion.compe").setup(
+                    {
+                        map_cr = true,
+                        map_complete = true -- insert () func completion
+                    }
+                )
+            end
+        }
 
     -- For Formatting
     use {'andrejlevkovitch/vim-lua-format', ft = {'lua'}}
@@ -59,9 +73,7 @@ return require('packer').startup(function(use)
     -- }
 
     -- For Welcome Screen
-    use {'glepnir/dashboard-nvim', config = function ()
-        require 'dashboard'
-    end}
+    use {'glepnir/dashboard-nvim', config = function() require 'dashboard' end}
 
     -- File Explorer
     use {
@@ -70,7 +82,6 @@ return require('packer').startup(function(use)
         cmd = 'NvimTreeToggle',
         config = function() require 'tree' end
     }
-    use {'kevinhwang91/rnvimr', cmd = 'RnvimrToggle'}
     use {
         'ahmedkhalf/lsp-rooter.nvim',
         after = 'nvim-tree.lua',
@@ -122,6 +133,7 @@ return require('packer').startup(function(use)
         event = 'BufRead',
         config = function() require 'treesitter' end
     }
+    use {'windwp/nvim-ts-autotag',  ft = {'html','javascript'}}
 
     --  Colorizer and Icons
     use {'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'}

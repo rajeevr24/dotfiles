@@ -3,7 +3,7 @@ local g = vim.g
 g.mapleader = " "
 
 -- For WSL Clipboard Support
-vim.cmd('source ~/.config/nvim/vimscript/clipboard.vim')
+-- vim.cmd('source ~/.config/nvim/vimscript/clipboard.vim')
 
 -- For autocommands
 vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')

@@ -4,5 +4,6 @@ require'nvim-treesitter.configs'.setup {
         enable = true -- false will disable the whole extension
     },
     matchup = {enable = true},
-    rainbow = {enable = true, extended_mode = true}
+    rainbow = {enable = true, extended_mode = true},
+    autotag = {enable = true}
 }

@@ -1,4 +1,4 @@
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 let g:clipboard = {
 			\ 'name': 'win32yank-wsl',
 			\ 'copy': {

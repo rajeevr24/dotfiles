@@ -1,6 +1,3 @@
-"Centers my screen vertically in insert mode
-    autocmd InsertEnter * norm zz
-
 " MatchUp
 augroup matchup_matchparen_highlight
   autocmd!

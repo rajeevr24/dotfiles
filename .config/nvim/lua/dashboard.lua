@@ -56,8 +56,8 @@ vim.g.dashboard_custom_section = {
         command = 'Telescope file_browser'
     },
     d = {
-        description = {'   Find Word           SPC l g'},
-        command = 'Telescope live_grep'
+        description = {'   Find Buffers        SPC f b'},
+        command = 'Telescope buffers'
     },
     e = {
         description = {'   Settings            SPC c f'},
