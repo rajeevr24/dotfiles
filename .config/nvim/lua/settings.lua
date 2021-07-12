@@ -28,7 +28,7 @@ vim.opt.relativenumber = true
 
 -- Enable highlighting of current line and column
 vim.opt.cursorline = true
-vim.opt.cursorcolumn = true
+-- vim.opt.cursorcolumn = true
 
 -- Fixing tab and space
 vim.opt.tabstop = 4
@@ -90,6 +90,7 @@ vim.cmd 'nnoremap ; :'
 -- For Undo Tree
 vim.api.nvim_set_keymap("n", "<F5>", ":UndotreeToggle<CR>", opt)
 
+
 -- better indenting
 vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
@@ -99,9 +100,6 @@ vim.cmd([[
     set nocompatible
     "For pasting into new line
         nmap np o<ESC>p
-
-    " Mapping ; to : for easier access
-        "  nnoremap ; :
 
     "Paste last thing yanked not deleted
         nmap ,p "0p

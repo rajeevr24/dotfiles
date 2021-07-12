@@ -82,9 +82,11 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/bracey.vim"
   },
   ["dashboard-nvim"] = {
+    commands = { "Dashboard" },
     config = { "\27LJ\2\2)\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\14dashboard\frequire\0" },
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
   ["friendly-snippets"] = {
     loaded = false,
@@ -93,8 +95,9 @@ _G.packer_plugins = {
   },
   ["galaxyline.nvim"] = {
     config = { "\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20nvim-galaxyline\frequire\0" },
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
   },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\0026\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
@@ -111,15 +114,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/kommentary"
-  },
-  ["lsp-rooter.nvim"] = {
-    config = { "\27LJ\2\2<\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\15lsp-rooter\frequire\0" },
-    load_after = {
-      ["nvim-tree.lua"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/lsp-rooter.nvim"
   },
   ["lsp_signature.nvim"] = {
     config = { "\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14on_attach\18lsp_signature\frequire\0" },
@@ -172,14 +166,7 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
   },
-  ["nvim-toggleterm.lua"] = {
-    commands = { "ToggleTerm" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
-  },
   ["nvim-tree.lua"] = {
-    after = { "lsp-rooter.nvim" },
     commands = { "NvimTreeToggle" },
     config = { "\27LJ\2\2$\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ttree\frequire\0" },
     loaded = false,
@@ -271,31 +258,20 @@ _G.packer_plugins = {
   },
   ["zen-mode.nvim"] = {
     config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/zen-mode.nvim"
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/zen-mode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20nvim-galaxyline\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
--- Config for: zen-mode.nvim
-time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
-time([[Config for zen-mode.nvim]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-try_loadstring("\27LJ\2\2)\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\14dashboard\frequire\0", "config", "dashboard-nvim")
-time([[Config for dashboard-nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file ToggleTerm lua require("packer.load")({'nvim-toggleterm.lua'}, { cmd = "ToggleTerm", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-vim.cmd [[command! -nargs=* -range -bang -complete=file BarbarEnable lua require("packer.load")({'barbar.nvim'}, { cmd = "BarbarEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 vim.cmd [[command! -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file Dashboard lua require("packer.load")({'dashboard-nvim'}, { cmd = "Dashboard", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file BarbarEnable lua require("packer.load")({'barbar.nvim'}, { cmd = "BarbarEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -312,7 +288,7 @@ vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'vi
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'vim-matchup'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'kommentary', 'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'vim-unimpaired', 'friendly-snippets', 'vim-vsnip', 'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'vim-unimpaired', 'vim-vsnip', 'nvim-compe', 'friendly-snippets'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

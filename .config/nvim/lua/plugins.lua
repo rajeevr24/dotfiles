@@ -27,11 +27,6 @@ return require('packer').startup(function(use)
     use {'tpope/vim-surround', event = 'BufRead'}
     -- use {'tpope/vim-sleuth'}
     use {'tpope/vim-unimpaired', event = 'InsertEnter'}
-    -- use {
-    --     'steelsojka/pears.nvim',
-    --     after = 'nvim-compe',
-    --     config = function() require 'auto-pair' end
-    -- }
         use {
             "windwp/nvim-autopairs",
             after = "nvim-compe",
@@ -64,7 +59,7 @@ return require('packer').startup(function(use)
     -- use {'folke/tokyonight.nvim'}
 
     -- For Welcome Screen
-    use {'glepnir/dashboard-nvim', config = function() require 'dashboard' end}
+    use {'glepnir/dashboard-nvim', cmd = 'Dashboard', config = function() require 'dashboard' end}
 
     -- File Explorer
     use {
@@ -72,11 +67,6 @@ return require('packer').startup(function(use)
         requires = 'kyazdani42/nvim-web-devicons',
         cmd = 'NvimTreeToggle',
         config = function() require 'tree' end
-    }
-    use {
-        'ahmedkhalf/lsp-rooter.nvim',
-        after = 'nvim-tree.lua',
-        config = function() require("lsp-rooter").setup {} end
     }
 
     -- For Comments
@@ -139,7 +129,8 @@ return require('packer').startup(function(use)
         'glepnir/galaxyline.nvim',
         branch = 'main',
         requires = {'kyazdani42/nvim-web-devicons'},
-        config = function() require 'nvim-galaxyline' end
+        config = function() require 'nvim-galaxyline' end,
+        opt = true
     }
 
     -- For Gir Status
@@ -157,6 +148,7 @@ return require('packer').startup(function(use)
     -- For Zen Mode
     use {
         "folke/zen-mode.nvim",
-        config = function() require("zen-mode").setup {} end
+        config = function() require("zen-mode").setup {} end,
+        opt = true
     }
 end)
