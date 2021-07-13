@@ -12,6 +12,10 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"   
 export PYTHONSTARTUP=~/.config/python/pythonrc
 
+#For DENO
+export DENO_INSTALL="/home/rajeev/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin

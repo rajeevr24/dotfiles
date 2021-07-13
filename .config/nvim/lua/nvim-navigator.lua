@@ -7,6 +7,8 @@ require'navigator'.setup({
             sumneko_binary = vim.fn.expand("$HOME") ..
                 "/.config/lua-language-server/bin/Linux/lua-language-server"
         },
+        tsserver = {
+            filetypes = {'typescript'}},
         pyls = {filetypes = {}},
         jedi_language_server = {filetypes = {}},
         ccls = {filetypes = {}}

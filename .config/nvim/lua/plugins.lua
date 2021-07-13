@@ -27,19 +27,17 @@ return require('packer').startup(function(use)
     use {'tpope/vim-surround', event = 'BufRead'}
     -- use {'tpope/vim-sleuth'}
     use {'tpope/vim-unimpaired', event = 'InsertEnter'}
-        use {
-            "windwp/nvim-autopairs",
-            after = "nvim-compe",
-            config = function()
-                require("nvim-autopairs").setup()
-                require("nvim-autopairs.completion.compe").setup(
-                    {
-                        map_cr = true,
-                        map_complete = true -- insert () func completion
-                    }
-                )
-            end
-        }
+    use {
+        "windwp/nvim-autopairs",
+        after = "nvim-compe",
+        config = function()
+            require("nvim-autopairs").setup()
+            require("nvim-autopairs.completion.compe").setup({
+                map_cr = true,
+                map_complete = true -- insert () func completion
+            })
+        end
+    }
 
     -- For Formatting
     use {'andrejlevkovitch/vim-lua-format', ft = {'lua'}}
@@ -59,7 +57,11 @@ return require('packer').startup(function(use)
     -- use {'folke/tokyonight.nvim'}
 
     -- For Welcome Screen
-    use {'glepnir/dashboard-nvim', cmd = 'Dashboard', config = function() require 'dashboard' end}
+    use {
+        'glepnir/dashboard-nvim',
+        cmd = 'Dashboard',
+        config = function() require 'dashboard' end
+    }
 
     -- File Explorer
     use {
@@ -114,7 +116,7 @@ return require('packer').startup(function(use)
         event = 'BufRead',
         config = function() require 'treesitter' end
     }
-    use {'windwp/nvim-ts-autotag',  ft = {'html','javascript'}}
+    use {'windwp/nvim-ts-autotag', ft = {'html', 'javascript'}}
 
     --  Colorizer and Icons
     use {'p00f/nvim-ts-rainbow', after = 'nvim-treesitter'}
