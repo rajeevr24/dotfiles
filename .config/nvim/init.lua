@@ -1,6 +1,6 @@
 -- Mapping leader
 local g = vim.g
-g.mapleader = ","
+g.mapleader = " "
 
 -- For WSL Clipboard Support
 -- vim.cmd('source ~/.config/nvim/vimscript/clipboard.vim')

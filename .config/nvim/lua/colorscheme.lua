@@ -15,11 +15,11 @@
 -- vim.cmd('colorscheme base16-3024')
 -- vim.cmd('colorscheme base16-snazzy')
 -- vim.cmd('colorscheme base16-brewer')
-vim.cmd('colorscheme base16-circus')
+-- vim.cmd('colorscheme base16-circus')
 
 -- For Tokyonight
--- vim.cmd[[colorscheme tokyonight]]
--- vim.g.tokyonight_style = "night"
+vim.cmd[[colorscheme tokyonight]]
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_sidebars = { "terminal", "packer" }
 -- vim.g.tokyonight_italic_comments = false
--- vim.g.tokyonight_sidebars = { "terminal", "packer" }
 

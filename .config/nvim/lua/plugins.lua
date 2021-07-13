@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
 
     -- For Formatting
     use {'andrejlevkovitch/vim-lua-format', ft = {'lua'}}
+    use {'prettier/vim-prettier', run = 'yarn install', ft = {'javascript', 'typescript','css','json','markdown','html'} }
 
     -- For Undo History
     use {'mbbill/undotree'}
@@ -53,8 +54,8 @@ return require('packer').startup(function(use)
     -- use 'mhartington/oceanic-next'
     -- use 'glepnir/zephyr-nvim'
     -- use 'ray-x/aurora'
-    use {'RRethy/nvim-base16'}
-    -- use {'folke/tokyonight.nvim'}
+    -- use {'RRethy/nvim-base16'}
+    use {'folke/tokyonight.nvim'}
 
     -- For Welcome Screen
     use {
@@ -67,7 +68,7 @@ return require('packer').startup(function(use)
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
-        cmd = 'NvimTreeToggle',
+        keys = "<C-n>",                             -- NvimTree will load only when this key is pressed
         config = function() require 'tree' end
     }
 
@@ -128,11 +129,11 @@ return require('packer').startup(function(use)
 
     -- For Beautiful statusline
     use {
-        'glepnir/galaxyline.nvim',
+       'glepnir/galaxyline.nvim',
         branch = 'main',
         requires = {'kyazdani42/nvim-web-devicons'},
         config = function() require 'nvim-galaxyline' end,
-        opt = true
+        keys = ",s"
     }
 
     -- For Gir Status
