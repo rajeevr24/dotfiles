@@ -71,7 +71,7 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["barbar.nvim"] = {
     commands = { "BarbarEnable" },
-    config = { "\27LJ\2\2&\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\vbarbar\frequire\0" },
+    config = { "\27LJ\2\2.\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\19plugins.barbar\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
@@ -83,7 +83,7 @@ _G.packer_plugins = {
   },
   ["dashboard-nvim"] = {
     commands = { "Dashboard" },
-    config = { "\27LJ\2\2)\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\14dashboard\frequire\0" },
+    config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
@@ -94,7 +94,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20nvim-galaxyline\frequire\0" },
+    config = { "\27LJ\2\0027\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\28plugins.nvim-galaxyline\frequire\0" },
     keys = { { "", ",s" } },
     loaded = false,
     needs_bufread = false,
@@ -111,7 +111,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/guihua.lua"
   },
   kommentary = {
-    config = { "\27LJ\2\2*\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\15commentary\frequire\0" },
+    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.commentary\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/kommentary"
@@ -126,7 +126,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/lsp_signature.nvim"
   },
   ["navigator.lua"] = {
-    config = { "\27LJ\2\2.\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\19nvim-navigator\frequire\0" },
+    config = { "\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27plugins.nvim-navigator\frequire\0" },
     load_after = {
       ["nvim-lspconfig"] = true
     },
@@ -152,7 +152,7 @@ _G.packer_plugins = {
   ["nvim-compe"] = {
     after = { "nvim-autopairs" },
     after_files = { "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe.vim" },
-    config = { "\27LJ\2\2*\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\15completion\frequire\0" },
+    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.completion\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-compe"
@@ -164,7 +164,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\2$\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\ttree\frequire\0" },
+    config = { "\27LJ\2\2,\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\17plugins.tree\frequire\0" },
     keys = { { "", "<C-n>" } },
     loaded = false,
     needs_bufread = false,
@@ -172,7 +172,7 @@ _G.packer_plugins = {
   },
   ["nvim-treesitter"] = {
     after = { "nvim-ts-rainbow" },
-    config = { "\27LJ\2\2*\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\15treesitter\frequire\0" },
+    config = { "\27LJ\2\0022\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\23plugins.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
@@ -217,7 +217,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\2\2.\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\19nvim-telescope\frequire\0" },
+    config = { "\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27plugins.nvim-telescope\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
@@ -237,7 +237,7 @@ _G.packer_plugins = {
   },
   ["vim-matchup"] = {
     after_files = { "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
-    config = { "\27LJ\2\2'\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\fmatchup\frequire\0" },
+    config = { "\27LJ\2\2/\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\20plugins.matchup\frequire\0" },
     loaded = false,
     needs_bufread = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-matchup"
@@ -281,8 +281,8 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> ,s <cmd>lua require("packer.load")({'galaxyline.nvim'}, { keys = ",s", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <C-n> <cmd>lua require("packer.load")({'nvim-tree.lua'}, { keys = "<lt>C-n>", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> ,s <cmd>lua require("packer.load")({'galaxyline.nvim'}, { keys = ",s", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

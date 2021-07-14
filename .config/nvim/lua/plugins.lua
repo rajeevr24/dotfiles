@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
         'ray-x/navigator.lua',
         requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'},
         after = 'nvim-lspconfig',
-        config = function() require 'nvim-navigator' end
+        config = function() require 'plugins.nvim-navigator' end
     }
     use {
         'ray-x/lsp_signature.nvim',
@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     use {
         'andymass/vim-matchup',
         event = 'CursorMoved',
-        config = function() require 'matchup' end
+        config = function() require 'plugins.matchup' end
     }
 
     -- For opening closing bracket and indentation
@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
     use {
         'glepnir/dashboard-nvim',
         cmd = 'Dashboard',
-        config = function() require 'dashboard' end
+        config = function() require 'plugins.dashboard' end
     }
 
     -- File Explorer
@@ -69,21 +69,21 @@ return require('packer').startup(function(use)
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         keys = "<C-n>",                             -- NvimTree will load only when this key is pressed
-        config = function() require 'tree' end
+        config = function() require 'plugins.tree' end
     }
 
     -- For Comments
     use {
         'b3nj5m1n/kommentary',
         event = 'VimEnter',
-        config = function() require 'commentary' end
+        config = function() require 'plugins.commentary' end
     }
 
     -- For Tabs
     use {
         'romgrk/barbar.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require 'barbar' end,
+        config = function() require 'plugins.barbar' end,
         -- event = 'BufHidden',
         cmd = 'BarbarEnable'
     }
@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
             {'nvim-telescope/telescope-fzy-native.nvim', run = 'make'}
         },
         event = 'VimEnter',
-        config = function() require 'nvim-telescope' end
+        config = function() require 'plugins.nvim-telescope' end
     }
 
     -- Auto-Completion and Snippet
@@ -106,7 +106,7 @@ return require('packer').startup(function(use)
             {'hrsh7th/vim-vsnip', event = 'InsertEnter'},
             {'rafamadriz/friendly-snippets', event = 'InsertEnter'}
         },
-        config = function() require 'completion' end,
+        config = function() require 'plugins.completion' end,
         event = 'InsertEnter'
     }
 
@@ -115,7 +115,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         event = 'BufRead',
-        config = function() require 'treesitter' end
+        config = function() require 'plugins.treesitter' end
     }
     use {'windwp/nvim-ts-autotag', ft = {'html', 'javascript'}}
 
@@ -132,7 +132,7 @@ return require('packer').startup(function(use)
        'glepnir/galaxyline.nvim',
         branch = 'main',
         requires = {'kyazdani42/nvim-web-devicons'},
-        config = function() require 'nvim-galaxyline' end,
+        config = function() require 'plugins.nvim-galaxyline' end,
         keys = ",s"
     }
 

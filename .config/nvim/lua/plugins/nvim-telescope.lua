@@ -79,13 +79,13 @@ vim.api.nvim_set_keymap("n", "<Leader>fe",
                         [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
                         opt)
 vim.api.nvim_set_keymap("n", "<Leader>cf",
-                        [[<Cmd>lua require('nvim-telescope').search_config()<CR>]],
+                        [[<Cmd>lua require('plugins.nvim-telescope').search_config()<CR>]],
                         opt)
 vim.api.nvim_set_keymap("n", "<Leader>sf",
-                        [[<Cmd>lua require('nvim-telescope').search_file()<CR>]],
+                        [[<Cmd>lua require('plugins.nvim-telescope').search_file()<CR>]],
                         opt)
 vim.api.nvim_set_keymap("n", "<Leader>gp",
-                        [[<Cmd>lua require('nvim-telescope').grep_prompt()<CR>]],
+                        [[<Cmd>lua require('plugins.nvim-telescope').grep_prompt()<CR>]],
                         opt)
 
 -- For LSP
