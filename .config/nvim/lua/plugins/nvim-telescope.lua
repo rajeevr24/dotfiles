@@ -14,8 +14,6 @@ require('telescope').setup {
             height = 0.85,
             prompt_position = 'top',
             horizontal = {
-                -- width_padding = 0.04,
-                -- height_padding = 0.1,
                 preview_width = function(_, cols, _)
                     if cols > 200 then
                         return math.floor(cols * 0.4)
@@ -25,8 +23,6 @@ require('telescope').setup {
                 end
             },
             vertical = {
-                -- width_padding = 0.05,
-                -- height_padding = 1,
                 width = 0.9,
                 height = 0.95,
                 preview_height = 0.5
@@ -107,7 +103,7 @@ local M = {}
 function M.grep_prompt()
     require('telescope.builtin').grep_string {
         shorten_path = true,
-        search = vim.fn.input("Rg  ")
+        search = vim.fn.input("Rg   ")
     }
 end
 

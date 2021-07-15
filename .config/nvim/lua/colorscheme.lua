@@ -18,8 +18,11 @@
 -- vim.cmd('colorscheme base16-circus')
 
 -- For Tokyonight
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_sidebars = { "terminal", "packer" }
+-- vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_sidebars = { "terminal", "packer" }
 -- vim.g.tokyonight_italic_comments = false
 
+-- For VsCode
+vim.g.vscode_style = "dark"
+vim.cmd[[colorscheme vscode]]

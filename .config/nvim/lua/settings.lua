@@ -1,4 +1,5 @@
 local opt = vim.opt
+
 -- Enable term GUI colors
 opt.termguicolors = true
 
@@ -6,7 +7,7 @@ opt.termguicolors = true
 opt.hidden = true
 
 -- Fixing line
-vim.cmd([[set nowrap]])
+-- vim.cmd([[set nowrap]])
 
 -- Enable mouse
 opt.mouse = 'a'
@@ -57,6 +58,13 @@ opt.scrolloff = 5
 
 -- Clipboard
 vim.cmd([[set clipboard=unnamedplus ]])
+
+vim.opt.fillchars      = {
+  diff                 = '∙',                              -- BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
+  eob                  = ' ',                              -- NO-BREAK SPACE (U+00A0, UTF-8: C2 A0) to suppress ~ at EndOfBuffer
+  fold                 = '·',                              -- MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+  vert                 = '┃',                              -- BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+}
 
 -- shell to use for `!`, `:!`, `system()` etc.
 opt.shell = 'sh'

@@ -9,7 +9,7 @@ g.mapleader = " "
 vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
 
 -- For Plugins
-require('plugins')
+require('pluginList')
 
 -- Icons
 require('nvim-devicons')
@@ -17,7 +17,6 @@ require('nvim-devicons')
 -- Settings that work for me
 require('settings')
 require('keymappings')
-
 -- Colorscheme
 require('colorscheme')
 require('custom_highlights')

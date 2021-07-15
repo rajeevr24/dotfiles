@@ -15,20 +15,20 @@ vim.api.nvim_set_keymap('n', '<A-9>', ':BufferGoto 9<CR>', opt)
 vim.cmd([[
 let bufferline = get(g:, 'bufferline', {})
 let bufferline.animation = v:false
-let bufferline.maximum_padding = 1
+let bufferline.maximum_padding = 2
 let bufferline.closable = v:true
 let bufferline.icon_close_tab_modified = ''
 ]])
 
-local tree = {}
-tree.open = function()
-    require'bufferline.state'.set_offset(31, 'FileTree')
-    require'nvim-tree'.find_file(true)
+local tree ={}
+tree.open = function ()
+   require'bufferline.state'.set_offset(31, 'FileTree')
+   require'nvim-tree'.find_file(true)
 end
 
-tree.close = function()
-    require'bufferline.state'.set_offset(0)
-    require'nvim-tree'.close()
+tree.close = function ()
+   require'bufferline.state'.set_offset(0)
+   require'nvim-tree'.close()
 end
 
 return tree

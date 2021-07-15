@@ -88,6 +88,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
+  ["formatter.nvim"] = {
+    config = { "\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27plugins.nvim-formatter\frequire\0" },
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
@@ -164,7 +169,7 @@ _G.packer_plugins = {
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\2,\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\17plugins.tree\frequire\0" },
+    config = { "\27LJ\2\0021\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\22plugins.nvim-tree\frequire\0" },
     keys = { { "", "<C-n>" } },
     loaded = false,
     needs_bufread = false,
@@ -222,18 +227,9 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
-  },
   undotree = {
     loaded = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/undotree"
-  },
-  ["vim-lua-format"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-lua-format"
   },
   ["vim-matchup"] = {
     after_files = { "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
@@ -241,11 +237,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-matchup"
-  },
-  ["vim-prettier"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier"
   },
   ["vim-surround"] = {
     loaded = false,
@@ -262,6 +253,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
   },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vscode.nvim"
+  },
   ["zen-mode.nvim"] = {
     config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
     loaded = false,
@@ -271,6 +266,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: formatter.nvim
+time([[Config for formatter.nvim]], true)
+try_loadstring("\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27plugins.nvim-formatter\frequire\0", "config", "formatter.nvim")
+time([[Config for formatter.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -281,21 +280,16 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> <C-n> <cmd>lua require("packer.load")({'nvim-tree.lua'}, { keys = "<lt>C-n>", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> ,s <cmd>lua require("packer.load")({'galaxyline.nvim'}, { keys = ",s", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <C-n> <cmd>lua require("packer.load")({'nvim-tree.lua'}, { keys = "<lt>C-n>", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'vim-lua-format'}, { ft = "lua" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-prettier', 'nvim-ts-autotag'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType css ++once lua require("packer.load")({'vim-prettier'}, { ft = "css" }, _G.packer_plugins)]]
-vim.cmd [[au FileType html ++once lua require("packer.load")({'vim-prettier', 'nvim-ts-autotag'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-prettier'}, { ft = "markdown" }, _G.packer_plugins)]]
-vim.cmd [[au FileType typescript ++once lua require("packer.load")({'vim-prettier'}, { ft = "typescript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-prettier'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'nvim-ts-autotag'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'nvim-ts-autotag'}, { ft = "html" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
@@ -303,58 +297,8 @@ vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'vi
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au CursorMoved * ++once lua require("packer.load")({'vim-matchup'}, { event = "CursorMoved *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'kommentary', 'telescope.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'vim-unimpaired', 'vim-vsnip', 'nvim-compe', 'friendly-snippets'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'vim-unimpaired', 'vim-vsnip', 'friendly-snippets', 'nvim-compe'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
-vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/css.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/graphql.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/html.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/javascript.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/json.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/less.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/lua.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/markdown.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/php.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/ruby.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/scss.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/svelte.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/typescript.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/vue.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/xml.vim]], false)
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], true)
-vim.cmd [[source /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]]
-time([[Sourcing ftdetect script at: /home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-prettier/ftdetect/yaml.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
