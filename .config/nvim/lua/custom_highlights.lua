@@ -21,3 +21,18 @@ cmd "hi TelescopePreviewBorder  guifg=#996633"
 
 -- Dashboard
 cmd "hi DashboardFooter guifg=#00e68a"
+
+-- Colorscheme
+vim.api.nvim_exec([[
+    autocmd!
+  autocmd ColorScheme * hi cursorlinenr guifg=#ffffff
+  autocmd ColorScheme * hi LineNr guifg=#666699
+  autocmd ColorScheme * hi PmenuSel guibg=#007acc
+  autocmd ColorScheme * hi Pmenu  guibg=#282c34
+  autocmd ColorScheme * hi PmenuSbar guibg =#00cccc
+  autocmd ColorScheme * hi PmenuThumb guibg =#81A1C1
+  autocmd ColorScheme * hi search guifg=#ffa600
+]], true)
+
+vim.g.vscode_style = "dark"
+vim.cmd [[colorscheme vscode]]

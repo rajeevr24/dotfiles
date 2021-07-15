@@ -22,11 +22,7 @@ require('telescope').setup {
                     end
                 end
             },
-            vertical = {
-                width = 0.9,
-                height = 0.95,
-                preview_height = 0.5
-            },
+            vertical = {width = 0.9, height = 0.95, preview_height = 0.5},
             flex = {horizontal = {preview_width = 0.9}}
         },
         mappings = {
@@ -62,7 +58,7 @@ vim.api.nvim_set_keymap("n", "<Leader>ff",
 vim.api.nvim_set_keymap("n", "<Leader>lg",
                         [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]],
                         opt)
-vim.api.nvim_set_keymap("n", "<Leader>fb",
+vim.api.nvim_set_keymap("n", "<C-b>",
                         [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
                         opt)
 vim.api.nvim_set_keymap("n", "<Leader>fh",
@@ -77,11 +73,14 @@ vim.api.nvim_set_keymap("n", "<Leader>fe",
 vim.api.nvim_set_keymap("n", "<Leader>cf",
                         [[<Cmd>lua require('plugins.nvim-telescope').search_config()<CR>]],
                         opt)
-vim.api.nvim_set_keymap("n", "<Leader>sf",
-                        [[<Cmd>lua require('plugins.nvim-telescope').search_file()<CR>]],
-                        opt)
+-- vim.api.nvim_set_keymap("n", "<Leader>sf",
+--                         [[<Cmd>lua require('plugins.nvim-telescope').search_file()<CR>]],
+--                         opt)
 vim.api.nvim_set_keymap("n", "<Leader>gp",
                         [[<Cmd>lua require('plugins.nvim-telescope').grep_prompt()<CR>]],
+                        opt)
+vim.api.nvim_set_keymap("n", "<Leader>rp",
+                        [[<Cmd>lua require('plugins.nvim-telescope').search_repos()<CR>]],
                         opt)
 
 -- For LSP
@@ -115,11 +114,19 @@ function M.search_config()
     })
 end
 
-function M.search_file()
-    require('telescope.builtin').find_files({
-        prompt_title = " Search Files ",
-        prompt_prefix = "    ",
-        cwd = "~"
+-- function M.search_file()
+--     require('telescope.builtin').find_files({
+--         prompt_title = " Search Files ",
+--         prompt_prefix = "    ",
+--         cwd = "~"
+--     })
+-- end
+
+function M.search_repos()
+    require'telescope.builtin'.file_browser({
+        prompt_title = "Search Repos",
+        prompt_prefix = "  ",
+        cwd = "~/repos"
     })
 end
 
