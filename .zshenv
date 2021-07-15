@@ -17,12 +17,9 @@ export DENO_INSTALL="/home/rajeev/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
-export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/go/bin:$PATH
 export PATH="$HOME/bin:$PATH"
 export LS_COLORS="$LS_COLORS:ow=1;95:tw=1;34:"
 export EDITOR="nvim"
 export VISUAL="nvim"
-
-
