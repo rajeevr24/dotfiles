@@ -78,7 +78,7 @@ map("n", "<Leader>rp",
 map("n", "<Leader>xw", [[<Cmd>Telescope lsp_workspace_diagnostics<cr>]], opt)
 map("n", "<Leader>xd", [[<Cmd>Telescope lsp_document_diagnostics<cr>]], opt)
 map("n", "<Leader>gr", [[<Cmd>Telescope lsp_references<cr>]], opt)
-map("n", "<Leader>ds", [[<Cmd>Telescope lsp_document_symbols<cr>]], opt)
+map("n", "<Leader>ds", [[<Cmd>Telescope treesitter<cr>]], opt)
 
 -- Fuzzy Finding
 map("n", "<Leader>/",

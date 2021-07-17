@@ -19,8 +19,7 @@ require'compe'.setup {
         calc = true,
         nvim_lua = true,
         vsnip = true,
-        spell = {filetypes = {"markdown"}},
-        treesitter = true
+        spell = {filetypes = {"markdown"}}
     }
 }
 

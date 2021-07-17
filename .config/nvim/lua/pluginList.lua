@@ -24,9 +24,7 @@ return require('packer').startup(function(use)
     }
 
     -- For opening closing bracket and indentation
-    use {'tpope/vim-surround', event = 'BufRead'}
-    -- use {'tpope/vim-sleuth'}
-    use {'tpope/vim-unimpaired', event = 'InsertEnter'}
+    use {'tpope/vim-unimpaired', event = 'BufRead'}
     use {
         "windwp/nvim-autopairs",
         after = "nvim-compe",
@@ -97,15 +95,15 @@ return require('packer').startup(function(use)
             {'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'},
             {'nvim-telescope/telescope-fzy-native.nvim', run = 'make'}
         },
-        event = 'VimEnter',
-        config = function() require 'plugins.nvim-telescope' end
+        config = function() require 'plugins.nvim-telescope' end,
+        event = 'UIEnter'
     }
 
     -- Auto-Completion and Snippet
     use {
         'hrsh7th/nvim-compe',
         requires = {
-            {'hrsh7th/vim-vsnip', event = 'InsertEnter'},
+            {'hrsh7th/vim-vsnip', event = 'InsertCharPre'},
             {'rafamadriz/friendly-snippets', event = 'InsertEnter'}
         },
         config = function() require 'plugins.completion' end,
