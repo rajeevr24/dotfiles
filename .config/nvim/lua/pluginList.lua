@@ -52,12 +52,12 @@ return require('packer').startup(function(use)
     use {'turbio/bracey.vim', run = 'npm install --prefix server', opt = true}
 
     -- Colorscheme
-    -- use {'dracula/vim', as = 'dracula'}
+    use {'dracula/vim', as = 'dracula'}
     -- use 'glepnir/zephyr-nvim'
     -- use 'ray-x/aurora'
     -- use {'RRethy/nvim-base16'}
     -- use {'folke/tokyonight.nvim'}
-    use {'Mofiqul/vscode.nvim'}
+    -- use {'Mofiqul/vscode.nvim'}
 
     -- For Welcome Screen
     use {

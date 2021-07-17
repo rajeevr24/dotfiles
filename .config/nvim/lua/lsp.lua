@@ -13,8 +13,3 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
     properties = {'documentation', 'detail', 'additionalTextEdits'}
 }
-
--- For Python
-require'lspconfig'.pyright.setup {capabilities = capabilities}
-
-require'lspconfig'.texlab.setup {}

@@ -1,6 +1,5 @@
 -- For autocommands
 -- vim.cmd('source ~/.config/nvim/vimscript/autocommand.vim')
-
 -- Mapping leader
 local g = vim.g
 g.mapleader = " "

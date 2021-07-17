@@ -88,6 +88,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
   },
+  dracula = {
+    loaded = true,
+    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/dracula"
+  },
   ["formatter.nvim"] = {
     config = { "\27LJ\2\0026\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\27plugins.nvim-formatter\frequire\0" },
     loaded = true,
@@ -253,10 +257,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/rajeev/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
   },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/home/rajeev/.local/share/nvim/site/pack/packer/start/vscode.nvim"
-  },
   ["zen-mode.nvim"] = {
     config = { "\27LJ\2\2:\0\0\2\0\3\0\a6\0\0\0'\1\1\0B\0\2\0029\0\2\0004\1\0\0B\0\2\1K\0\1\0\nsetup\rzen-mode\frequire\0" },
     loaded = false,
@@ -273,9 +273,15 @@ time([[Config for formatter.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+if vim.fn.exists(":StartupTime") == 0 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file StartupTime lua require("packer.load")({'startuptime.vim'}, { cmd = "StartupTime", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
+if vim.fn.exists(":Dashboard") == 0 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file Dashboard lua require("packer.load")({'dashboard-nvim'}, { cmd = "Dashboard", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
+if vim.fn.exists(":BarbarEnable") == 0 then
 vim.cmd [[command! -nargs=* -range -bang -complete=file BarbarEnable lua require("packer.load")({'barbar.nvim'}, { cmd = "BarbarEnable", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+end
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads

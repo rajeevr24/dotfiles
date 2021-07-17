@@ -2,7 +2,7 @@
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
-
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 #PATH variable defined by me
 export PATH=$HOME/.local/bin:$PATH
@@ -16,6 +16,7 @@ export PYTHONSTARTUP=~/.config/python/pythonrc
 export DENO_INSTALL="/home/rajeev/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+export PATH="$PATH:$HOME/.local/share/cargo/bin"
 export BROWSER='/mnt/c/Program Files/Mozilla Firefox/firefox.exe'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$HOME/go/bin:$PATH

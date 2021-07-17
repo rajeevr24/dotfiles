@@ -51,52 +51,39 @@ require('telescope').load_extension('fzy_native')
 
 --  Telescope Keybindings
 vim.g.mapleader = " "
+local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
-vim.api.nvim_set_keymap("n", "<Leader>ff",
-                        [[<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({winblend = 10}))<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>lg",
-                        [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<C-b>",
-                        [[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>fh",
-                        [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>of",
-                        [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>fe",
-                        [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>cf",
-                        [[<Cmd>lua require('plugins.nvim-telescope').search_config()<CR>]],
-                        opt)
--- vim.api.nvim_set_keymap("n", "<Leader>sf",
---                         [[<Cmd>lua require('plugins.nvim-telescope').search_file()<CR>]],
---                         opt)
-vim.api.nvim_set_keymap("n", "<Leader>gp",
-                        [[<Cmd>lua require('plugins.nvim-telescope').grep_prompt()<CR>]],
-                        opt)
-vim.api.nvim_set_keymap("n", "<Leader>rp",
-                        [[<Cmd>lua require('plugins.nvim-telescope').search_repos()<CR>]],
-                        opt)
+map("n", "<Leader>ff",
+    [[<Cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({winblend = 10}))<CR>]],
+    opt)
+map("n", "<Leader>lg",
+    [[<Cmd>lua require('telescope.builtin').live_grep()<CR>]], opt)
+map("n", "<C-b>", [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], opt)
+map("n", "<Leader>ht",
+    [[<Cmd>lua require('telescope.builtin').help_tags()<CR>]], opt)
+map("n", "<Leader>of", [[<Cmd>lua require('telescope.builtin').oldfiles()<CR>]],
+    opt)
+map("n", "<Leader>fb",
+    [[<Cmd>lua require('telescope.builtin').file_browser()<CR>]], opt)
+map("n", "<Leader>cf",
+    [[<Cmd>lua require('plugins.nvim-telescope').search_config()<CR>]], opt)
+map("n", "<Leader>sf",
+    [[<Cmd>lua require('plugins.nvim-telescope').search_file()<CR>]], opt)
+map("n", "<Leader>gp",
+    [[<Cmd>lua require('plugins.nvim-telescope').grep_prompt()<CR>]], opt)
+map("n", "<Leader>rp",
+    [[<Cmd>lua require('plugins.nvim-telescope').search_repos()<CR>]], opt)
 
 -- For LSP
-vim.api.nvim_set_keymap("n", "<Leader>xw",
-                        [[<Cmd>Telescope lsp_workspace_diagnostics<cr>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>xd",
-                        [[<Cmd>Telescope lsp_document_diagnostics<cr>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>gr",
-                        [[<Cmd>Telescope lsp_references<cr>]], opt)
-vim.api.nvim_set_keymap("n", "<Leader>ds",
-                        [[<Cmd>Telescope lsp_document_symbols<cr>]], opt)
+map("n", "<Leader>xw", [[<Cmd>Telescope lsp_workspace_diagnostics<cr>]], opt)
+map("n", "<Leader>xd", [[<Cmd>Telescope lsp_document_diagnostics<cr>]], opt)
+map("n", "<Leader>gr", [[<Cmd>Telescope lsp_references<cr>]], opt)
+map("n", "<Leader>ds", [[<Cmd>Telescope lsp_document_symbols<cr>]], opt)
 
 -- Fuzzy Finding
-vim.api.nvim_set_keymap("n", "<Leader>/",
-                        [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
-                        opt)
+map("n", "<Leader>/",
+    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]],
+    opt)
 local M = {}
 
 function M.grep_prompt()
@@ -114,13 +101,14 @@ function M.search_config()
     })
 end
 
--- function M.search_file()
---     require('telescope.builtin').find_files({
---         prompt_title = " Search Files ",
---         prompt_prefix = "    ",
---         cwd = "~"
---     })
--- end
+function M.search_file()
+    require('telescope.builtin').find_files({
+        prompt_title = " Search Files ",
+        prompt_prefix = "    ",
+        find_command = {"rg", "--no-ignore", "--files"},
+        cwd = "~"
+    })
+end
 
 function M.search_repos()
     require'telescope.builtin'.file_browser({

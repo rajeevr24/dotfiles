@@ -60,51 +60,47 @@ gl.short_line_list = {'NvimTree', 'packer', 'undotree'}
 -- --     }
 -- -- }
 
-
 local mode_color = function()
-  local mode_colors = {
-    n = colors.green,
-    i = colors.blue,
-    c = colors.orange,
-    V = colors.magenta,
-    [''] = colors.magenta,
-    v = colors.magenta,
-    R = colors.red,
-  }
+    local mode_colors = {
+        n = colors.green,
+        i = colors.blue,
+        c = colors.orange,
+        V = colors.magenta,
+        [''] = colors.magenta,
+        v = colors.magenta,
+        R = colors.red
+    }
 
-  local color = mode_colors[vim.fn.mode()]
+    local color = mode_colors[vim.fn.mode()]
 
-  if color == nil then
-    color = colors.red
-  end
+    if color == nil then color = colors.red end
 
-  return color
+    return color
 end
 
 gls.left[1] = {
-  ViMode = {
-    provider = function()
-      local alias = {
-        n = 'NORMAL',
-        i = 'INSERT',
-        c = 'COMMAND',
-        V = 'VISUAL',
-        [''] = 'VISUAL',
-        v = 'VISUAL',
-        R = 'REPLACE',
-      }
-      vim.api.nvim_command('hi GalaxyViMode gui=bold guibg='..mode_color())
-      local alias_mode = alias[vim.fn.mode()]
-      if alias_mode == nil then
-        alias_mode = vim.fn.mode()
-      end
-      return '  '..alias_mode..' '
-    end,
-    separator = ' ',
-    highlight = { colors.bg, colors.section_bg },
-    -- separator_highlight = {colors.bg, colors.section_bg },
-    separator_highlight = {colors.bg, colors.bg },
-  },
+    ViMode = {
+        provider = function()
+            local alias = {
+                n = 'NORMAL',
+                i = 'INSERT',
+                c = 'COMMAND',
+                V = 'VISUAL',
+                [''] = 'VISUAL',
+                v = 'VISUAL',
+                R = 'REPLACE'
+            }
+            vim.api.nvim_command('hi GalaxyViMode gui=bold guibg=' ..
+                                     mode_color())
+            local alias_mode = alias[vim.fn.mode()]
+            if alias_mode == nil then alias_mode = vim.fn.mode() end
+            return '  ' .. alias_mode .. ' '
+        end,
+        separator = ' ',
+        highlight = {colors.bg, colors.section_bg},
+        -- separator_highlight = {colors.bg, colors.section_bg },
+        separator_highlight = {colors.bg, colors.bg}
+    }
 }
 
 gls.left[2] = {
@@ -154,7 +150,7 @@ gls.mid[5] = {
         end,
         icon = ' LSP: ',
         -- highlight = {colors.vivid_blue, colors.grey}
-        highlight = {colors.cyan, colors.bg}
+        highlight = {colors.cyan, colors.grey}
     }
 }
 
@@ -193,7 +189,7 @@ gls.right[4] = {
     }
 }
 
-gls.right[5] = {
+gls.right[6] = {
     LineInfo = {
         provider = 'LineColumn',
         separator = ' ',
@@ -202,7 +198,7 @@ gls.right[5] = {
     }
 }
 
-gls.right[6] = {
+gls.right[7] = {
     PerCent = {
         provider = 'LinePercent',
         separator = '',
@@ -210,16 +206,6 @@ gls.right[6] = {
         highlight = {colors.info_yellow, colors.bg}
     }
 }
-
--- gls.right[7] = {
---     ScrollBar = {
---         provider = 'ScrollBar',
---         condition = condition.hide_in_width,
---         separator = ' ',
---         separator_highlight = {'NONE', colors.bg},
---         highlight = {colors.blue, colors.bg}
---     }
--- }
 
 gls.right[8] = {
     BufferType = {
@@ -250,4 +236,3 @@ gls.right[10] = {
         highlight = {colors.orange, colors.bg}
     }
 }
-

@@ -4,7 +4,6 @@ require('formatter').setup({
         lua = {
             function()
                 return {
-
                     exe = "lua-format",
                     -- args = {"--i", "--stdin"},
                     stdin = true
@@ -29,6 +28,15 @@ require('formatter').setup({
                     stdin = true
                 }
             end
+        },
+        python = {
+            function()
+                return {
+                    exe = "black",
+                    args = {vim.api.nvim_buf_get_name(0)},
+                    stdin = false
+                }
+            end
         }
 
     }
@@ -37,6 +45,6 @@ require('formatter').setup({
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.html,*.lua FormatWrite
+  autocmd BufWritePost *.js,*.html,*.lua,*.py FormatWrite
 augroup END
 ]], true)

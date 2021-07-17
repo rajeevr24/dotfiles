@@ -33,8 +33,9 @@ opt.cursorline = true
 -- opt.cursorcolumn = true
 
 -- Fixing tab and space
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 opt.expandtab = true
 
 -- Fixing Indent
@@ -55,6 +56,9 @@ opt.updatetime = 100
 
 -- Make Line Visible
 opt.scrolloff = 5
+
+-- No Swapfiles
+opt.swapfile = false
 
 -- Clipboard
 vim.cmd([[set clipboard=unnamedplus ]])

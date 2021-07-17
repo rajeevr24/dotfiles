@@ -75,3 +75,19 @@ export NODE_REPL_HISTORY=""
 
 #asdf config
 . $HOME/.asdf/asdf.sh
+
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/rajeev/.fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/home/rajeev/.fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/rajeev/.fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "/home/rajeev/.fzf/shell/key-bindings.zsh"
+export FZF_DEFAULT_COMMAND='rg --no-ignore --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
